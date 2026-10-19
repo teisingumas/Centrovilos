@@ -227,11 +227,13 @@ section{padding-block:clamp(80px,12vw,160px)}
 .gal .a{aspect-ratio:768/597}
 .gal-3{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:clamp(12px,1.6vw,22px)}
 .gal-3 figure{aspect-ratio:3/4}
+.gal-2{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:clamp(12px,1.6vw,22px)}
+.gal-2 figure{aspect-ratio:4/3}
 .gal figcaption{position:absolute;left:16px;bottom:14px;color:#fff;font-size:11px;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.5)}
 @media (max-width:760px){ .gal{grid-template-columns:1fr} .gal-3{grid-template-columns:repeat(3,minmax(0,1fr))} .gal-3 figcaption{display:none} }
 
 /* ---------- contacts ---------- */
-.foot{background:var(--ink);color:var(--on-night);padding-block:clamp(48px,6vw,84px) 32px}
+.foot{background:var(--ink);color:var(--on-night);padding-block:clamp(64px,8vw,112px) 36px}
 .foot .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:end}
 .foot .eyebrow{color:var(--bronze-hi)}
 .foot h2{font-size:clamp(38px,4.6vw,68px);line-height:1;margin:26px 0 0}
@@ -250,6 +252,16 @@ section{padding-block:clamp(80px,12vw,160px)}
 .c4 dd.tel{font-family:var(--display);font-size:clamp(24px,2.1vw,30px);font-variant-numeric:tabular-nums;white-space:nowrap;overflow-wrap:normal}
 @media (max-width:420px){ .c4{grid-template-columns:1fr} }
 
+/* footer menu + facebook */
+.fnav{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(40px,5vw,64px);padding-top:26px;border-top:1px solid var(--night-line)}
+.fnav ul{display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);list-style:none;margin:0;padding:0}
+.fnav ul a{text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-night-2);transition:color .25s}
+.fnav ul a:hover{color:var(--bronze-hi)}
+.fnav .fb{display:inline-flex;width:28px;height:28px;color:var(--on-night-2);transition:color .25s}
+.fnav .fb:hover{color:var(--bronze-hi)}
+.fnav .fb svg{width:100%;height:100%;fill:currentColor}
+.foot-min .fnav{margin-top:0;padding-top:0;border-top:0}
+.foot .fnav + .base{margin-top:26px}
 /* quality guarantee (JUDA) in the footer's bottom row */
 .foot .guar{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--on-night-2)}
 .foot .guar img{height:40px;width:auto}
@@ -281,7 +293,8 @@ section{padding-block:clamp(80px,12vw,160px)}
 .c-map{position:relative;flex:1;min-height:320px;background:var(--night-2);overflow:hidden}
 .c-map-static{position:absolute;inset:0;width:100%;height:100%;display:block}
 .c-map .villa .v1{text-anchor:middle}
-.c-map-g iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.08)}
+/* iframe rendered 115% and scaled down → map appears ~13% further out */
+.c-map-g iframe{position:absolute;left:0;top:0;width:115%;height:115%;border:0;transform:scale(.87);transform-origin:0 0;filter:grayscale(1) contrast(1.08)}
 /* bronze tint over the map; clicks pass through to the map */
 .c-map::after{content:"";position:absolute;inset:0;background:var(--bronze);mix-blend-mode:color;opacity:.7;pointer-events:none}
 .c-map-link{position:absolute;z-index:1;left:0;bottom:0;display:inline-flex;align-items:center;gap:10px;background:var(--night);color:var(--on-night);text-decoration:none;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:12px 16px;transition:background .25s}
@@ -309,7 +322,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .c-done:focus{outline:none}
 .c-done h3{font-size:clamp(30px,3vw,42px);line-height:1.1;margin:18px 0 12px}
 .c-done p{margin:0;color:var(--ink-2);font-weight:300;font-size:18px}
-.foot-min{padding-block:0 32px}
+.foot-min{padding-block:clamp(36px,4vw,56px) 32px}
 .foot-min .base{margin-top:0}
 @media (max-width:900px){ .c-grid{grid-template-columns:1fr} .c-form-col{order:-1} .c-map{flex:none;height:340px} }
 @media (max-width:560px){ .c-form .row{grid-template-columns:1fr} }
