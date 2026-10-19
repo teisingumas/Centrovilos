@@ -358,11 +358,6 @@ section{padding-block:clamp(80px,12vw,160px)}
 .ap-items b{font-weight:500}
 .ap-panel:not([hidden]){animation:apIn .35s var(--ease)}
 @keyframes apIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.ap-cta{padding-block:clamp(56px,7vw,96px);border-bottom:1px solid var(--line)}
-.ap-cta .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
-.ap-cta h2{font-size:clamp(36px,4vw,56px);line-height:1.05}
-.ap-cta h2 em{font-style:italic;color:var(--accent)}
-.ap-cta-btns{display:flex;gap:14px;flex-wrap:wrap}
 @media (max-width:860px){
   .ap-split{grid-template-columns:1fr}
   .ap-tabs{position:static}
