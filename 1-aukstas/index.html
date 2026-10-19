@@ -82,7 +82,10 @@
       </button>
     </div>
     <div class="bt-split" id="btPanel" role="tabpanel" aria-labelledby="fl1">
-      <figure class="bt-plan"><img id="btPlan" src="../img/planai/aukstas-1.webp" width="2000" height="1587" alt="1 aukštas – butų planas"></figure>
+      <figure class="bt-plan">
+        <img id="btPlan" src="../img/planai/aukstas-1.webp" width="2000" height="1587" alt="1 aukštas – butų planas">
+        <button class="cta bt-zoom" type="button" id="btZoom" aria-haspopup="dialog">Didinti <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><circle cx="7" cy="7" r="5"/><path d="M11 11l4 4M7 4.5v5M4.5 7h5"/></svg></button>
+      </figure>
       <div class="bt-apts" id="btApts">
         <article class="bt-apt">
           <div class="bt-apt-hd"><h2>Butas 01</h2><span class="bt-badge">Rezervuotas</span></div>
@@ -98,6 +101,11 @@
     </div>
   </div>
 </section>
+
+<dialog class="bt-dlg" id="planDlg" aria-label="Aukšto planas">
+  <button class="bt-dlg-x" type="button" id="planDlgX" aria-label="Uždaryti">×</button>
+  <img id="planDlgImg" src="../img/planai/aukstas-1.webp" width="2000" height="1587" alt="">
+</dialog>
 </main>
 
 <footer class="foot">

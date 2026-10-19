@@ -400,7 +400,17 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-floor[aria-selected="true"] .bt-radio{border:5px solid var(--accent)}
 .bt-split{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,40px);align-items:stretch}
 .bt-plan{margin:0;background:#fff;padding:clamp(16px,2vw,28px);display:flex;align-items:center}
+.bt-plan{position:relative}
 .bt-plan img{width:100%;height:auto}
+.bt-zoom{position:absolute;right:clamp(12px,1.6vw,20px);bottom:clamp(12px,1.6vw,20px);padding:12px 18px;font-size:12px}
+.bt-dlg{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#fff}
+.bt-dlg::backdrop{background:rgba(20,18,16,.85)}
+.bt-dlg[open]{display:grid;place-items:center}
+.bt-dlg img{width:auto;height:auto;max-width:100%;max-height:100vh;max-height:100dvh;padding:clamp(16px,3vw,48px);box-sizing:border-box}
+/* phone: the plan opens wider than the screen and scrolls sideways */
+@media (max-width:700px){ .bt-dlg[open]{display:block;overflow:auto} .bt-dlg img{max-width:none;max-height:none;width:1100px;padding:72px 16px 24px} }
+.bt-dlg-x{position:fixed;top:16px;right:16px;width:48px;height:48px;border:0;background:var(--ink);color:#fff;font-size:28px;line-height:1;cursor:pointer;z-index:1}
+.bt-dlg-x:hover{background:var(--accent)}
 .bt-apts{display:flex;flex-direction:column;gap:20px}
 .bt-apt{flex:1;background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px}
 .bt-apt-hd{display:flex;justify-content:space-between;align-items:center;gap:12px}

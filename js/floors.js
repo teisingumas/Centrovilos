@@ -32,3 +32,9 @@ flBtns.forEach((b,i)=>{
 });
 /* nuoroda su #aukstas-2 / #aukstas-3 atidaro tą aukštą */
 const m=location.hash.match(/^#aukstas-([1-3])$/); if(m) showFloor(m[1]);
+
+/* plano didinimas: atidaro pasirinkto aukšto planą per visą ekraną */
+const dlg=$("planDlg");
+$("btZoom").addEventListener("click",()=>{ $("planDlgImg").src=$("btPlan").src; $("planDlgImg").alt=$("btPlan").alt; dlg.showModal(); });
+$("planDlgX").addEventListener("click",()=>dlg.close());
+dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
