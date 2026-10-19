@@ -183,7 +183,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .loc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(30px,6vw,90px);align-items:end;margin-bottom:clamp(44px,5vw,72px)}
 .loc h2{font-size:clamp(44px,5.6vw,88px);line-height:1;margin-top:26px}
 .loc h2 em{font-style:italic;color:var(--accent)}
-.loc-head p{margin:0;color:var(--on-night-2);font-weight:300;font-size:clamp(18px,1.5vw,21px);line-height:1.65;max-width:62ch}
+.loc-head p{margin:0;color:var(--on-night-2);font-weight:300;font-size:18px;line-height:1.65;max-width:62ch}
 .loc-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
 .map-col{min-width:0}
 .map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--night-line);scrollbar-width:thin}
