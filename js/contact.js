@@ -17,3 +17,10 @@ form.addEventListener("submit",e=>{
   /* TODO: čia prijungti siuntimą (pvz. fetch į serverio skriptą ar formų paslaugą) */
   form.hidden=true; $("cDone").hidden=false; $("cDone").focus();
 });
+
+/* Google žemėlapis: tik kai puslapis atidarytas tiesiogiai (artifakto rėmelyje Google iframe blokuojamas – lieka statinis žemėlapis) */
+if(window.top===window){
+  const g=$("gmap"), f=document.createElement("iframe");
+  f.src=g.dataset.src; f.title="Centro Vila žemėlapyje – Trakų g. 16, Kaunas"; f.loading="lazy"; f.allowFullscreen=true;
+  f.referrerPolicy="no-referrer-when-downgrade"; g.appendChild(f);
+}
