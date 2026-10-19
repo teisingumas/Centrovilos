@@ -5,6 +5,7 @@ Statinė svetainė (HTML + CSS + JS), jokio surinkimo nereikia – failus galima
 ```
 index.html            pagrindinis puslapis
 kontaktai/index.html  kontaktų puslapis (/kontaktai)
+apie-projekta/index.html  apie projektą (/apie-projekta)
 css/style.css         visi stiliai (spalvos ir šriftai – :root kintamieji viršuje)
 js/site.js            bendra antraštė / meniu
 js/home.js            pagrindinio puslapio logika (aukštai, žemėlapis, įkėlimo animacija)
