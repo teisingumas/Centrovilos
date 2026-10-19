@@ -406,6 +406,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-apt-hd{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .bt-apt h2{font-size:34px;line-height:1}
 .bt-badge{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--corten);border:1px solid var(--bronze-hi);padding:6px 10px;white-space:nowrap}
+.bt-badge--free{color:#fff;background:var(--accent);border-color:var(--accent)}
 .bt-apt dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;border-top:1px solid var(--line);padding-top:18px}
 .bt-apt dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
 .bt-apt dd{margin:2px 0 0;font-size:17px}

@@ -2,11 +2,11 @@
 const T="—";
 const FLOORS={
   1:{ name:"1 aukštas", apts:[
-    { no:"01", area:"72,03 m²", floor:"1", rooms:"1–3", orient:"R / V / Š", reserved:true },
-    { no:"02", area:"70,41 m²", floor:"1", rooms:"1–3", orient:"R / P / V", reserved:true } ] },
+    { no:"01", area:"72,03 m²", floor:"1", rooms:"1–3", orient:"R / V / Š", status:"Rezervuotas" },
+    { no:"02", area:"70,41 m²", floor:"1", rooms:"1–3", orient:"R / P / V", status:"Rezervuotas" } ] },
   2:{ name:"2 aukštas", apts:[
-    { no:"03", area:T, floor:"2", rooms:T, orient:T },
-    { no:"04", area:T, floor:"2", rooms:T, orient:T } ] },
+    { no:"03", area:"70,90 m²", floor:"2", rooms:"3", orient:"R / V / Š", status:"Laisvas" },
+    { no:"04", area:"74,82 m²", floor:"2", rooms:"3", orient:"R / P / V", status:"Laisvas" } ] },
   3:{ name:"3 aukštas + mansarda", apts:[
     { no:"05", area:T, floor:"3 + mansarda", rooms:T, orient:T },
     { no:"06", area:T, floor:"3 + mansarda", rooms:T, orient:T } ] }
@@ -19,7 +19,7 @@ function showFloor(n,focus){
   $("btPanel").setAttribute("aria-labelledby","fl"+n);
   $("btPlan").src="../img/planai/aukstas-"+n+".webp"; $("btPlan").alt=f.name+" – butų planas";
   $("btApts").innerHTML=f.apts.map(a=>`<article class="bt-apt">
-    <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.reserved?'<span class="bt-badge">Rezervuotas</span>':""}</div>
+    <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>
     <dl><div><dt>Plotas</dt><dd>${a.area}</dd></div><div><dt>Aukštas</dt><dd>${a.floor}</dd></div><div><dt>Kambariai</dt><dd>${a.rooms}</dd></div><div><dt>Orientacija</dt><dd>${a.orient}</dd></div></dl>
     <a class="cta ghost" href="../kontaktai/index.html?butas=${a.no}">Plačiau ${ARROW}</a></article>`).join("");
 }
