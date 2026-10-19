@@ -6,7 +6,7 @@ body{margin:0;padding:0}
 :root{
   color-scheme:light;
   --stone:#F2F0EC; --paper:#FBFAF8; --ink:#141210; --ink-2:#5C5650; --line:#DEDAD3;
-  --bronze:#9C5A2B; --bronze-hi:#C98A55; --corten:#7E4322;
+  --bronze:#9C5A2B; --bronze-hi:#C98A55; --accent:#CF8045; --corten:#7E4322;
   --night:#161311; --night-2:#211D1A; --on-night:#F1ECE5; --on-night-2:#B3AAA0; --night-line:#37312C;
   --display:"Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
   --body:"Jost", "Futura", "Century Gothic", system-ui, sans-serif;
@@ -52,7 +52,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--bronze-hi);transform:scaleX(0);transition:transform .3s var(--ease)}
 .nav a:hover::after,.nav a.on::after{transform:scaleX(1)}
 .hdr-end{display:flex;justify-content:flex-end;align-items:center;gap:12px}
-.cta{display:inline-flex;align-items:center;gap:12px;background:var(--bronze);color:#fff;text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:14px 22px;border:0;font-family:inherit;cursor:pointer;transition:background .25s, color .25s, box-shadow .25s}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:14px 22px;border:0;font-family:inherit;cursor:pointer;transition:background .25s, color .25s, box-shadow .25s}
 .cta:hover{background:var(--ink)}
 .cta svg{width:16px;height:16px;transition:transform .25s}
 .cta:hover svg{transform:translateX(3px)}
@@ -91,10 +91,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero-copy{position:absolute;z-index:3;left:0;right:0;bottom:clamp(36px,5.5vw,84px);pointer-events:none}
 .hero-copy .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:32px}
 .hero-copy .txt{max-width:560px;pointer-events:auto;color:#fff}
-.hero .eyebrow{color:#D9A26C;font-size:14px;font-weight:600;letter-spacing:.26em;text-shadow:0 1px 10px rgba(0,0,0,.55)}
-.hero .eyebrow::before{width:42px;height:2px;background:#D9A26C}
+.hero .eyebrow{color:var(--accent);font-size:14px;font-weight:600;letter-spacing:.26em;text-shadow:0 1px 10px rgba(0,0,0,.55)}
+.hero .eyebrow::before{width:42px;height:2px;background:var(--accent)}
 .hero h1{font-size:clamp(44px,5.6vw,88px);line-height:.98;margin:20px 0 20px}
-.hero h1 em{font-style:italic;color:#D9A26C}
+.hero h1 em{font-style:italic;color:var(--accent)}
 .hero .txt p{margin:0 0 28px;color:rgba(255,255,255,.86);max-width:440px;font-weight:300;font-size:18px}
 .hero .cta.ghost{color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.85)}
 .hero .cta.ghost:hover{background:#fff;color:var(--ink)}
@@ -134,8 +134,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .hero-copy{position:static;padding-block:34px 56px;border-bottom:1px solid var(--line)}
   .hero-copy .wrap{flex-direction:column;align-items:stretch}
   .hero-copy .txt{color:var(--ink);max-width:none}
-  .hero .eyebrow{color:var(--bronze);text-shadow:none}
-  .hero h1 em{color:var(--bronze)}
+  .hero .eyebrow{color:var(--accent);text-shadow:none}
+  .hero h1 em{color:var(--accent)}
   .hero .txt p{color:var(--ink-2)}
   .hero .cta.ghost{color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
   .hero .cta.ghost:hover{background:var(--ink);color:var(--paper)}
@@ -177,10 +177,10 @@ section{padding-block:clamp(80px,12vw,160px)}
 
 /* ---------- location (dark band) ---------- */
 .loc{background:var(--night);color:var(--on-night)}
-.loc .eyebrow{color:var(--bronze-hi)}
+.loc .eyebrow{color:var(--accent)}
 .loc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(30px,6vw,90px);align-items:end;margin-bottom:clamp(44px,5vw,72px)}
 .loc h2{font-size:clamp(44px,5.6vw,88px);line-height:1;margin-top:26px}
-.loc h2 em{font-style:italic;color:var(--bronze-hi)}
+.loc h2 em{font-style:italic;color:var(--accent)}
 .loc-head p{margin:0;color:var(--on-night-2);font-weight:300;font-size:clamp(18px,1.5vw,21px);line-height:1.65;max-width:62ch}
 .loc-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
 .map-col{min-width:0}
@@ -237,7 +237,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .foot .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,80px);align-items:end}
 .foot .eyebrow{color:var(--bronze-hi)}
 .foot h2{font-size:clamp(38px,4.6vw,68px);line-height:1;margin:26px 0 0}
-.foot h2 em{font-style:italic;color:var(--bronze-hi)}
+.foot h2 em{font-style:italic;color:var(--accent)}
 .foot dl{margin:0}
 .foot dt{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--on-night-2);margin-bottom:4px}
 .foot dd{margin:0;font-size:18px;font-weight:300}
@@ -280,7 +280,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .page-head::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,11,9,.86)}
 .page-head .eyebrow{color:var(--bronze-hi)}
 .page-head h1{font-size:clamp(44px,5.6vw,88px);line-height:1;margin:26px 0 24px}
-.page-head h1 em{font-style:italic;color:var(--bronze-hi)}
+.page-head h1 em{font-style:italic;color:var(--accent)}
 .page-head p{margin:0;max-width:60ch;color:rgba(255,255,255,.82);font-weight:300;font-size:18px}
 
 /* ---------- contact page: contacts + map | form ---------- */
