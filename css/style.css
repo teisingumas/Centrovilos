@@ -398,18 +398,18 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-ft .s{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
 .bt-radio{position:absolute;top:16px;right:16px;width:18px;height:18px;border-radius:50%;box-sizing:border-box;border:1.5px solid #8F877F;background:#fff}
 .bt-floor[aria-selected="true"] .bt-radio{border:5px solid var(--accent)}
-.bt-split{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,40px);align-items:start}
-.bt-plan{margin:0;background:#fff;padding:clamp(16px,2vw,28px)}
+.bt-split{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,3vw,40px);align-items:stretch}
+.bt-plan{margin:0;background:#fff;padding:clamp(16px,2vw,28px);display:flex;align-items:center}
 .bt-plan img{width:100%;height:auto}
 .bt-apts{display:flex;flex-direction:column;gap:20px}
-.bt-apt{background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px}
+.bt-apt{flex:1;background:#fff;padding:28px;display:flex;flex-direction:column;gap:20px}
 .bt-apt-hd{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .bt-apt h2{font-size:34px;line-height:1}
 .bt-badge{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--corten);border:1px solid var(--bronze-hi);padding:6px 10px;white-space:nowrap}
 .bt-apt dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;border-top:1px solid var(--line);padding-top:18px}
 .bt-apt dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
 .bt-apt dd{margin:2px 0 0;font-size:17px}
-.bt-apt .cta{align-self:flex-start}
+.bt-apt .cta{align-self:flex-start;margin-top:auto}
 @media (max-width:1100px){ .bt-floors{grid-template-columns:1fr} }
 @media (max-width:900px){ .bt-split{grid-template-columns:1fr} }
 @media (max-width:520px){ .bt-stats{grid-template-columns:1fr} .bt-stats li{padding-left:0} .bt-stats li+li{border-left:0;border-top:1px solid var(--line)} .bt-floor{grid-template-columns:80px 1fr;padding:18px} .bt-ico{width:80px} }
