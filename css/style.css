@@ -253,14 +253,14 @@ section{padding-block:clamp(80px,12vw,160px)}
 @media (max-width:420px){ .c4{grid-template-columns:1fr} }
 
 /* footer menu + facebook */
-.fnav{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(40px,5vw,64px);padding-top:26px;border-top:1px solid var(--night-line)}
-.fnav ul{display:flex;flex-wrap:wrap;gap:12px clamp(24px,4vw,64px);list-style:none;margin:0;padding:0}
-.fnav ul a{text-decoration:none;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-night-2);transition:color .25s}
+.fnav{display:flex;align-items:center;justify-content:center;gap:clamp(24px,3vw,40px);flex-wrap:wrap;margin-top:clamp(40px,5vw,64px)}
+.fnav ul{display:flex;flex-wrap:wrap;justify-content:center;gap:10px clamp(20px,3vw,40px);list-style:none;margin:0;padding:0}
+.fnav ul a{text-decoration:none;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--on-night-2);transition:color .25s}
 .fnav ul a:hover{color:var(--bronze-hi)}
-.fnav .fb{display:inline-flex;width:28px;height:28px;color:var(--on-night-2);transition:color .25s}
+.fnav .fb{display:inline-flex;width:18px;height:18px;color:var(--on-night-2);transition:color .25s}
 .fnav .fb:hover{color:var(--bronze-hi)}
 .fnav .fb svg{width:100%;height:100%;fill:currentColor}
-.foot-min .fnav{margin-top:0;padding-top:0;border-top:0}
+.foot-min .fnav{margin-top:0}
 .foot .fnav + .base{margin-top:26px}
 /* quality guarantee (JUDA) in the footer's bottom row */
 .foot .guar{display:inline-flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--on-night-2)}
