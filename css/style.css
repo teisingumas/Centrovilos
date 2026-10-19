@@ -133,6 +133,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .panel .apts{display:grid;gap:10px;margin:20px 0 22px}
 .apt{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:12px}
 .apt b{font-weight:500}
+.apt b small{display:block;font-weight:400;font-size:13px;color:var(--ink-2);letter-spacing:.04em}
+.apt .bt-badge{font-size:10px;padding:5px 9px;color:var(--corten)}
+.apt .bt-badge--free{color:#fff}
 .apt span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .panel p{margin:0 0 20px;font-size:15px;color:var(--ink-2)}
 .panel .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;background:none;color:var(--ink);cursor:pointer;font-size:22px;line-height:1}

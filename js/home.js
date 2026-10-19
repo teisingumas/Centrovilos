@@ -1,8 +1,8 @@
 /* Centro Vila – pagrindinio puslapio skriptas */
 const FLOORS = {
-  "aukstas-3": { title:"3 aukštas", note:"su mansarda", apts:["Butas 5","Butas 6"] },
-  "aukstas-2": { title:"2 aukštas", apts:["Butas 3","Butas 4"] },
-  "aukstas-1": { title:"1 aukštas", apts:["Butas 1","Butas 2"] }
+  "aukstas-3": { title:"3 aukštas", note:"su mansarda", apts:[{ no:"05" },{ no:"06" }] },
+  "aukstas-2": { title:"2 aukštas", apts:[{ no:"03", area:"70,90 m²", status:"Laisvas" },{ no:"04", area:"74,82 m²", status:"Laisvas" }] },
+  "aukstas-1": { title:"1 aukštas", apts:[{ no:"01", area:"72,03 m²", status:"Rezervuotas" },{ no:"02", area:"70,41 m²", status:"Rezervuotas" }] }
 };
 /* x,y – taškas žemėlapyje (971×470) */
 const PLACES = [
@@ -69,7 +69,7 @@ function select(k){
   selKey=k; document.querySelectorAll("[data-k]").forEach(el=>el.classList.toggle("sel",el.dataset.k===k));
   if(!k){ panel.classList.remove("on"); return; }
   const info=FLOORS[k]; $("pTitle").innerHTML=info.title+(info.note?`<small>${info.note}</small>`:"");
-  $("pApts").innerHTML=info.apts.map(n=>`<div class="apt"><b>${n}</b><span>Pritaikomas</span></div>`).join("");
+  $("pApts").innerHTML=info.apts.map(a=>`<div class="apt"><b>Butas ${a.no}<small>${a.area||"—"}</small></b>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>`).join("");
   panel.querySelector(".cta").href="kontaktai/index.html?aukstas="+k.replace("aukstas-","");
   panel.classList.add("on");
 }
