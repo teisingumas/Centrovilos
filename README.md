@@ -16,3 +16,6 @@ Peržiūra lokaliai: `python3 -m http.server` ir atidaryti http://localhost:8000
 
 Kontaktų forma kol kas niekur nesiunčiama – patikrina laukus ir parodo padėką.
 Siuntimą prijungti `js/contact.js` (žymė `TODO`).
+
+Ta pati svetainė publikuojama ir kaip Claude artifaktas: https://claude.ai/artifact/WMG5YkZ496ozyUHPn3QCoM
+Vidinės nuorodos rašomos su `index.html` (pvz. `kontaktai/index.html`), kad veiktų ir artifakte, ir serveryje.

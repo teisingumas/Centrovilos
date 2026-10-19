@@ -70,7 +70,7 @@ function select(k){
   if(!k){ panel.classList.remove("on"); return; }
   const info=FLOORS[k]; $("pTitle").innerHTML=info.title+(info.note?`<small>${info.note}</small>`:"");
   $("pApts").innerHTML=info.apts.map(n=>`<div class="apt"><b>${n}</b><span>Pritaikomas</span></div>`).join("");
-  panel.querySelector(".cta").href="kontaktai/?aukstas="+k.replace("aukstas-","");
+  panel.querySelector(".cta").href="kontaktai/index.html?aukstas="+k.replace("aukstas-","");
   panel.classList.add("on");
 }
 floorsG.addEventListener("pointermove",e=>{
