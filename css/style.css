@@ -427,7 +427,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-apt .cta{align-self:flex-start;margin-top:auto}
 @media (max-width:1100px){ .bt-floors{grid-template-columns:1fr} }
 @media (max-width:900px){ .bt-split{grid-template-columns:1fr} }
-@media (max-width:520px){ .bt-stats{grid-template-columns:1fr} .bt-stats li{padding-left:0} .bt-stats li+li{border-left:0;border-top:1px solid var(--line)} .bt-floor{grid-template-columns:80px 1fr;padding:18px} .bt-ico{width:80px} }
+@media (max-width:520px){ .bt-stats{margin-top:36px} .bt-stats li{padding:18px 10px 0} .bt-stats li:first-child{padding-left:0} .bt-stats b{font-size:36px} .bt-stats small{font-size:13px;margin-left:2px} .bt-stats span{font-size:10px;letter-spacing:.12em;line-height:1.4} .bt-floor{grid-template-columns:80px 1fr;padding:18px} .bt-ico{width:80px} }
 
 /* ---------- gallery page (/galerija) ---------- */
 .gl-hero{padding-bottom:clamp(40px,5vw,64px)}
@@ -493,6 +493,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .apt-feat li{display:flex;align-items:center;gap:12px;padding:16px;background:var(--stone);font-size:15px}
 .apt-feat svg{width:28px;height:28px;flex:none;color:var(--bronze)}
 .apt-ctas{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:700px){ .apt-ctas{display:grid;grid-template-columns:1fr} .apt-ctas .cta{justify-content:center} }
 .ap-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-top:clamp(32px,4vw,56px);padding-top:24px;border-top:1px solid var(--line)}
 .ap-nav a{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;min-height:44px;transition:color .25s}
 .ap-nav a:hover{color:var(--bronze)}
