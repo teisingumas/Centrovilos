@@ -1,6 +1,6 @@
 /* Centro Vila – pagrindinio puslapio skriptas */
 const FLOORS = {
-  "aukstas-3": { title:"3 aukštas", note:"su mansarda", apts:[{ no:"05" },{ no:"06" }] },
+  "aukstas-3": { title:"3 aukštas", note:"su mansarda", apts:[{ no:"05", area:"126,36 m²" },{ no:"06", area:"131,65 m²" }] },
   "aukstas-2": { title:"2 aukštas", apts:[{ no:"03", area:"70,90 m²", status:"Laisvas" },{ no:"04", area:"74,82 m²", status:"Laisvas" }] },
   "aukstas-1": { title:"1 aukštas", apts:[{ no:"01", area:"72,03 m²", status:"Rezervuotas" },{ no:"02", area:"70,41 m²", status:"Rezervuotas" }] }
 };
