@@ -20,7 +20,15 @@ if(!location.hash){
 /* ---------- header ---------- */
 const hdr=$("hdr");
 const keepSolid=hdr.classList.contains("solid"); /* vidiniuose puslapiuose antraštė visada šviesi */
-function onScroll(){ hdr.classList.toggle("solid", keepSolid || scrollY > 10); }
-addEventListener("scroll",onScroll,{passive:true}); onScroll();
-$("burger").onclick=()=>{ const o=hdr.classList.toggle("open"); $("burger").setAttribute("aria-expanded",o); };
-document.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>{ hdr.classList.remove("open"); $("burger").setAttribute("aria-expanded","false"); }));
+/* mobiliajame „Rinkis butą“ rodomas tik praslinkus pirmą (hero) sekciją */
+const heroSec=document.querySelector("main > section");
+function onScroll(){
+  hdr.classList.toggle("solid", keepSolid || scrollY > 10);
+  hdr.classList.toggle("cta-on", !heroSec || scrollY > heroSec.offsetTop + heroSec.offsetHeight - hdr.offsetHeight);
+}
+addEventListener("scroll",onScroll,{passive:true}); addEventListener("resize",onScroll); onScroll();
+function setMenu(o){ hdr.classList.toggle("open",o); document.documentElement.classList.toggle("menu-open",o); $("burger").setAttribute("aria-expanded",o); }
+$("burger").onclick=()=>setMenu(!hdr.classList.contains("open"));
+document.querySelectorAll(".nav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));
+addEventListener("keydown",e=>{ if(e.key==="Escape" && hdr.classList.contains("open")) setMenu(false); });
+matchMedia("(min-width:1021px)").addEventListener("change",e=>{ if(e.matches) setMenu(false); });
