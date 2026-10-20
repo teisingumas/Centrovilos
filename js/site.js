@@ -3,7 +3,16 @@ const $=id=>document.getElementById(id);
 /* naujas puslapis visada atsidaro nuo viršaus (naršyklė neatkuria ankstesnės slinkties vietos),
    išskyrus nuorodas su #vieta – jas sutvarko pats puslapis */
 if("scrollRestoration" in history) history.scrollRestoration="manual";
-if(!location.hash){ scrollTo(0,0); addEventListener("load",()=>scrollTo(0,0),{once:true}); }
+function toTop(){
+  try{ scrollTo(0,0); (document.scrollingElement||document.documentElement).scrollTop=0; document.body&&(document.body.scrollTop=0); }catch(e){}
+}
+if(!location.hash){
+  toTop();
+  addEventListener("DOMContentLoaded",toTop,{once:true});
+  /* kai kurios aplinkos (pvz. peržiūros rėmelis) atkuria slinktį jau po užkrovimo – pakartojame */
+  addEventListener("load",()=>{ toTop(); setTimeout(toTop,120); setTimeout(toTop,450); },{once:true});
+  addEventListener("pageshow",e=>{ if(e.persisted) toTop(); });
+}
 /* ---------- header ---------- */
 const hdr=$("hdr");
 const keepSolid=hdr.classList.contains("solid"); /* vidiniuose puslapiuose antraštė visada šviesi */
