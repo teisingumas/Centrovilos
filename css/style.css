@@ -470,6 +470,9 @@ section{padding-block:clamp(80px,12vw,160px)}
 .apt-split{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
 .apt-plan{position:relative}
 .apt-plans{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
+/* two-level apartments: each level is its own row (plan | its rooms) */
+.apt-row+.apt-row{margin-top:clamp(20px,2.4vw,32px)}
+.apt-row>.apt-plan,.apt-row>.apt-info{align-self:stretch}
 .apt-plan figcaption{margin-bottom:10px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--ink-2)}
 .apt-plan:has(figcaption){flex-direction:column;align-items:stretch}
 .apt-total{display:flex;justify-content:space-between;margin:12px 0 0;font-weight:600;font-variant-numeric:tabular-nums}
