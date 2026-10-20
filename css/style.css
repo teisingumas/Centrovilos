@@ -430,6 +430,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 
 /* ---------- gallery page (/galerija) ---------- */
 .gl-hero{padding-bottom:clamp(40px,5vw,64px)}
+.gl-hero .ap-a{right:clamp(16px,5vw,80px)}
 .gl{padding-block:0 clamp(64px,8vw,120px)}
 .gl-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
 .gl-item{all:unset;box-sizing:border-box;cursor:zoom-in;position:relative;display:block;width:100%;aspect-ratio:4/3;overflow:hidden;background:var(--line)}

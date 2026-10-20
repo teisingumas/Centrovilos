@@ -70,7 +70,7 @@ function select(k){
   if(!k){ panel.classList.remove("on"); return; }
   const info=FLOORS[k]; $("pTitle").innerHTML=info.title+(info.note?`<small>${info.note}</small>`:"");
   $("pApts").innerHTML=info.apts.map(a=>`<div class="apt"><b>Butas ${a.no}<small>${a.area||"—"}</small></b>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>`).join("");
-  panel.querySelector(".cta").href="kontaktai/index.html?aukstas="+k.replace("aukstas-","");
+  panel.querySelector(".cta").href="1-aukstas/index.html#"+k;
   panel.classList.add("on");
 }
 floorsG.addEventListener("pointermove",e=>{
