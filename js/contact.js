@@ -22,4 +22,4 @@ form.addEventListener("submit",e=>{
 });
 
 /* žemėlapis: tik Centro Vila taškas, be maršrutų */
-locMap($("ctMap"),[]);
+locMap($("ctMap"),[],{lp:{"Laisvės al.":.75}});

@@ -1,7 +1,7 @@
 /* Centro Vila – schematinis bronzinių linijų Kauno centro žemėlapis (1000×760).
    locMap(svg, places): nupiešia žemėlapį į <svg>; places – taškai su maršrutais (gali būti tuščias). */
 const LM_W=1000, LM_H=760, LM_HX=792, LM_HY=486;
-function locMap(svg,places){
+function locMap(svg,places,opt={}){
   const W=LM_W,H=LM_H,HX=LM_HX,HY=LM_HY;
   const C={bg:"#120f0c",major:"#7a5232",minor:"#3d2a1b",water:"#5a3d26",label:"#a37a55",area:"#6b4e35",waterLabel:"#8a6444",accent:"#e09a5e",house:"#f4e6d4"};
   let seed=11; const R=()=>(seed=(seed*9301+49297)%233280)/233280;
@@ -42,7 +42,7 @@ function locMap(svg,places){
   s+=`<ellipse cx="948" cy="256" rx="34" ry="22" fill="none" stroke="${C.minor}" stroke-width="2"/>`;
   MINOR.forEach(m=>s+=`<path d="${P(m)}" stroke="${C.minor}" stroke-width=".9" fill="none" stroke-linecap="round"/>`);
   MAJOR.forEach(m=>s+=`<path d="${P(m.p)}" stroke="${C.major}" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`);
-  MAJOR.forEach(m=>{const k=Math.min(m.p.length-2,Math.floor(m.lp*(m.p.length-1))),a=m.p[k],b=m.p[k+1];let r=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;if(r>90||r<-90)r+=180;const x=(a[0]+b[0])/2,y=(a[1]+b[1])/2;
+  MAJOR.forEach(m=>{const lp=(opt.lp||{})[m.n]??m.lp,k=Math.min(m.p.length-2,Math.floor(lp*(m.p.length-1))),a=m.p[k],b=m.p[k+1];let r=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;if(r>90||r<-90)r+=180;const x=(a[0]+b[0])/2,y=(a[1]+b[1])/2;
     s+=`<text x="${x}" y="${y-9}" transform="rotate(${r} ${x} ${y})" text-anchor="middle" font-family="Red Hat Display,sans-serif" font-size="12.5" letter-spacing="1.6" fill="${C.label}">${m.n.toUpperCase()}</text>`});
   AREAS.forEach(a=>{const col=a.water?C.waterLabel:a.t==="Ąžuolynas"||a.t==="Ramybės parkas"?C.waterLabel:C.area;
     s+=`<text x="${a.x}" y="${a.y}" ${a.rot?`transform="rotate(${a.rot} ${a.x} ${a.y})"`:""} text-anchor="middle" font-family="${a.water?"Bodoni Moda,serif":"Red Hat Display,sans-serif"}" font-style="${a.water?"italic":"normal"}" font-size="${a.water?18:13}" letter-spacing="${a.water?0:2.2}" fill="${col}">${a.water?a.t:a.t.toUpperCase()}</text>`});
