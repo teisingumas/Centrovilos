@@ -55,7 +55,7 @@
         <div><dt>Aukštas</dt><dd>2 aukštas</dd></div>
         <div><dt>Langų orientacija</dt><dd>R / V / Š</dd></div>
         <div><dt>Apdaila</dt><dd>Dalinė</dd></div>
-        <div><dt>Kaina</dt><dd><a href="../kontaktai/index.html?butas=03">Teirautis</a></dd></div>
+        <div><dt>Kaina</dt><dd><a href="../kontaktai/index.html?butas=03" data-inq>Teirautis</a></dd></div>
       </dl>
       <div class="apt-rooms">
         <h2 class="ap-label">Patalpos</h2>
@@ -72,7 +72,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5L12 12l9-4.5M12 12v9"/></svg><span>Erdvūs sandėliukai</span></li>
       </ul>
       <div class="apt-ctas">
-        <a class="cta" href="../kontaktai/index.html?butas=03">Teirautis dėl buto <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a class="cta" href="../kontaktai/index.html?butas=03" data-inq>Teirautis dėl buto <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
         <a class="cta ghost" href="../1-aukstas/index.html#aukstas-2">Aukšto planas</a>
       </div>
     </div>
@@ -83,6 +83,37 @@
 <dialog class="bt-dlg" id="planDlg" aria-label="Buto planas">
   <button class="bt-dlg-x" type="button" id="planDlgX" aria-label="Uždaryti">×</button>
   <img id="planDlgImg" src="../img/butai/butas-03.webp" width="1024" height="1024" alt="">
+</dialog>
+<dialog class="inq" id="inq" aria-labelledby="inqTitle">
+  <button class="inq-x" type="button" id="inqX" aria-label="Uždaryti">×</button>
+  <div class="inq-grid">
+    <div class="inq-form">
+      <div class="eyebrow">Butas Nr. 03</div>
+      <h2 id="inqTitle">Teiraukitės dėl <em>buto</em></h2>
+      <p class="inq-lead">Atsakysime per vieną darbo dieną.</p>
+      <form id="inqForm" novalidate>
+        <div class="row">
+          <div class="field"><label for="iName">Vardas</label><input id="iName" name="vardas" type="text" autocomplete="given-name" required><small class="err">Įveskite vardą</small></div>
+          <div class="field"><label for="iSurname">Pavardė</label><input id="iSurname" name="pavarde" type="text" autocomplete="family-name" required><small class="err">Įveskite pavardę</small></div>
+        </div>
+        <div class="field"><label for="iPhone">Tel. numeris</label><input id="iPhone" name="telefonas" type="tel" autocomplete="tel" inputmode="tel" placeholder="+370" pattern="[0-9+\s\(\)\-]{6,}" required><small class="err">Įveskite telefono numerį</small></div>
+        <div class="field"><label for="iMsg">Žinutė</label><textarea id="iMsg" name="zinute" rows="4" required>Sveiki, domina butas Nr. 03. Norėčiau sužinoti daugiau.</textarea><small class="err">Parašykite žinutę</small></div>
+        <input type="hidden" name="butas" value="03">
+        <div class="c-submit"><button class="cta" type="submit">Siųsti užklausą <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></button><p class="note">Jūsų duomenis naudosime tik atsakyti į šią užklausą.</p></div>
+      </form>
+      <div class="c-done" id="inqDone" hidden tabindex="-1"><div class="eyebrow">Ačiū</div><h3>Jūsų užklausa gauta.</h3><p>Susisieksime su jumis artimiausiu metu.</p></div>
+    </div>
+    <div class="inq-side" aria-hidden="true">
+      <img class="inq-logo" src="../img/juda-logo.png" width="500" height="188" alt="">
+      <img class="inq-photo" src="../img/brokeriai.webp" width="446" height="378" alt="">
+    </div>
+  </div>
+  <ul class="inq-contacts">
+    <li><span>Juras Sadauskas</span><a href="tel:+37060101066">+370 601 01066</a></li>
+    <li><span>Darius Uleckas</span><a href="tel:+37069938883">+370 699 38883</a></li>
+    <li><span>El. paštas</span><a href="mailto:info@centrovila.lt">info@centrovila.lt</a></li>
+    <li><span>Adresas</span><a href="https://maps.app.goo.gl/gEmYdVADFxmiJUcH7" target="_blank" rel="noopener">Trakų g. 16, Kaunas</a></li>
+  </ul>
 </dialog>
 </main>
 
@@ -113,5 +144,6 @@
 
 <script src="../js/site.js?v=20261020c"></script>
 <script src="../js/apartment.js?v=20261020c"></script>
+<script src="../js/inquiry.js?v=20261020c"></script>
 </body>
 </html>
