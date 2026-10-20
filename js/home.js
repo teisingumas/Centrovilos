@@ -60,7 +60,7 @@ groups.forEach(g=>{
   p.setAttribute("d",g.d); p.setAttribute("class","floor"); p.dataset.k=g.key;
   p.setAttribute("tabindex","0"); p.setAttribute("role","button"); p.setAttribute("aria-label",info.title+", "+info.apts.length+" butai");
   floorsG.appendChild(p);
-  const b=document.createElement("button"); b.className="fbtn"; b.dataset.k=g.key;
+  const b=document.createElement("button"); b.className="fbtn"; b.dataset.k=g.key; b.style.setProperty("--o",parseInt(info.title)||0);
   b.innerHTML=`<b>${info.title.split(" ")[0]}</b><span>aukštas · ${info.apts.length} butai${info.note?`<i>${info.note}</i>`:""}</span>`;
   ui.appendChild(b);
 });

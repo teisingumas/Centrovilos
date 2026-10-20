@@ -176,6 +176,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .fbtn{flex-direction:column;align-items:flex-start;gap:4px;padding:10px 12px} .fbtn span{text-align:left}
   .fbtn span{font-size:10px;letter-spacing:.1em}
   .panel{position:fixed;top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));right:max(12px, env(safe-area-inset-right,0px));left:max(12px, env(safe-area-inset-left,0px));width:auto;transform:translateY(24px)}
+/* mobiliajame: be „Apie projektą“, didesni aukštų langeliai, tvarka 1–2–3 */
+@media (max-width:700px){
+  .hero .txt .cta{display:none}
+  .hero-copy{padding-block:48px 72px}
+  .hero-copy .wrap{gap:52px}
+  .hero h1{margin-bottom:26px}
+  .hero .txt p{margin-bottom:0;line-height:1.75}
+  .floors-ui{gap:10px}
+  .floors-ui .lbl{margin-bottom:12px}
+  .fbtn{order:var(--o,0);justify-content:space-between;min-height:150px;padding:18px 14px 16px;gap:10px}
+  .fbtn b{font-size:52px}
+  .fbtn span{font-size:11px;letter-spacing:.12em;line-height:1.5}
+  .fbtn i{font-size:12px;margin-top:4px}
+}
 }
 
 /* ---------- about ---------- */
