@@ -4,7 +4,11 @@ const $=id=>document.getElementById(id);
    išskyrus nuorodas su #vieta – jas sutvarko pats puslapis */
 if("scrollRestoration" in history) history.scrollRestoration="manual";
 function toTop(){
-  try{ scrollTo(0,0); (document.scrollingElement||document.documentElement).scrollTop=0; document.body&&(document.body.scrollTop=0); }catch(e){}
+  /* akimirksniu, be sklandaus slinkimo (CSS scroll-behavior:smooth laikinai išjungiamas) */
+  const r=document.documentElement, prev=r.style.scrollBehavior;
+  r.style.scrollBehavior="auto";
+  try{ scrollTo({top:0,left:0,behavior:"instant"}); }catch(e){ scrollTo(0,0); }
+  r.style.scrollBehavior=prev;
 }
 if(!location.hash){
   toTop();
