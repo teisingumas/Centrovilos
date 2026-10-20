@@ -42,7 +42,7 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 })();
 
 /* ---------- active menu item ---------- */
-const secMap={pagrindinis:"#pagrindinis",apie:"#apie",vieta:"#apie",galerija:"#galerija"};
+const secMap={pagrindinis:"#pagrindinis",apie:"#apie",vieta:"#apie"};
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const h=secMap[e.target.id]; document.querySelectorAll(".nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")===h)); } }),{rootMargin:"-45% 0px -50% 0px"});
 Object.keys(secMap).forEach(id=>{ const el=$(id); if(el) io.observe(el); });
 

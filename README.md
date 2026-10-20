@@ -5,6 +5,7 @@ Statinė svetainė (HTML + CSS + JS), jokio surinkimo nereikia – failus galima
 ```
 index.html            pagrindinis puslapis
 kontaktai/index.html  kontaktų puslapis (/kontaktai)
+galerija/index.html   galerija (img/galerija/: -m.webp sąraše, didelės – peržiūroje)
 1-aukstas/index.html  butai: aukšto pasirinkimas, planai (img/planai/), butų duomenys js/floors.js
 apie-projekta/index.html  apie projektą (/apie-projekta)
 css/style.css         visi stiliai (spalvos ir šriftai – :root kintamieji viršuje)
