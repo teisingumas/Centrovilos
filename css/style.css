@@ -199,16 +199,12 @@ section{padding-block:clamp(80px,12vw,160px)}
 .map-col{min-width:0}
 .map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--night-line);scrollbar-width:thin}
 .map{position:relative;min-width:0}
-.map img{width:100%;height:auto;aspect-ratio:971/470}
-.map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.route{fill:none;stroke:var(--bronze-hi);stroke-width:2;stroke-dasharray:5 6;vector-effect:non-scaling-stroke;opacity:0;transition:opacity .3s}
-.route.on{opacity:1}
-.poi{cursor:pointer}
-.poi circle{fill:var(--night);stroke:var(--on-night);stroke-width:1.4;transition:fill .25s, stroke .25s}
-.poi text{font-family:var(--body);font-size:12px;font-weight:600;fill:var(--on-night);text-anchor:middle;dominant-baseline:central;pointer-events:none}
-.poi.on circle{fill:var(--bronze);stroke:var(--bronze-hi)}
-.poi .name{font-size:14px;font-weight:500;opacity:0;transition:opacity .25s;paint-order:stroke;stroke:var(--night);stroke-width:4px}
-.poi.on .name{opacity:1}
+.map svg{display:block;width:100%;height:auto;aspect-ratio:1000/760}
+.lm-route{fill:none;stroke:#e09a5e;stroke-width:1.6;stroke-dasharray:2 5;stroke-linecap:round;opacity:0;transition:opacity .25s}
+.lm-route.on{opacity:1}
+.lm-pin{cursor:pointer}
+.lm-pin .s{transition:transform .2s ease;transform-box:fill-box;transform-origin:center}
+.lm-pin.on .s{transform:scale(1.3)}
 .villa .ring{fill:none;stroke:var(--bronze-hi);stroke-width:1.5;transform-origin:center;transform-box:fill-box;animation:ring 2.8s var(--ease) infinite}
 @keyframes ring{from{transform:scale(.6);opacity:.9}to{transform:scale(2.6);opacity:0}}
 .villa rect{fill:var(--bronze-hi)}
