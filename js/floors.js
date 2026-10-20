@@ -8,8 +8,8 @@ const FLOORS={
     { no:"03", area:"70,90 m²", floor:"2", rooms:"3", orient:"R / V / Š", status:"Laisvas" },
     { no:"04", area:"74,82 m²", floor:"2", rooms:"3", orient:"R / P / V", status:"Laisvas" } ] },
   3:{ name:"3 aukštas + mansarda", apts:[
-    { no:"05", area:"126,36 m²", floor:"3 + mansarda", rooms:"5", orient:"R / V / Š" },
-    { no:"06", area:"131,65 m²", floor:"3 + mansarda", rooms:"5", orient:"R / P / V" } ] }
+    { no:"05", area:"126,36 m²", floor:"3 + mansarda", rooms:"5", orient:"R / Š / V", status:"Laisvas" },
+    { no:"06", area:"131,65 m²", floor:"3 + mansarda", rooms:"5", orient:"R / P / V", status:"Laisvas" } ] }
 };
 const ARROW='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>';
 const flBtns=[...document.querySelectorAll(".bt-floor")];
@@ -21,7 +21,7 @@ function showFloor(n,focus){
   $("btApts").innerHTML=f.apts.map(a=>`<article class="bt-apt">
     <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>
     <dl><div><dt>Plotas</dt><dd>${a.area}</dd></div><div><dt>Aukštas</dt><dd>${a.floor}</dd></div><div><dt>Kambariai</dt><dd>${a.rooms}</dd></div><div><dt>Orientacija</dt><dd>${a.orient}</dd></div></dl>
-    <a class="cta ghost" href="${+a.no<=4?`../butas-${a.no}/index.html`:`../kontaktai/index.html?butas=${a.no}`}">Plačiau ${ARROW}</a></article>`).join("");
+    <a class="cta ghost" href="../butas-${a.no}/index.html">Plačiau ${ARROW}</a></article>`).join("");
 }
 flBtns.forEach((b,i)=>{
   b.addEventListener("click",()=>{ showFloor(b.dataset.floor); history.replaceState(null,"","#aukstas-"+b.dataset.floor); });
@@ -31,7 +31,10 @@ flBtns.forEach((b,i)=>{
   });
 });
 /* nuoroda su #aukstas-2 / #aukstas-3 atidaro tą aukštą */
-const m=location.hash.match(/^#aukstas-([1-3])$/); if(m) showFloor(m[1]);
+const m=location.hash.match(/^#aukstas-([1-3])$/);
+if(m){ showFloor(m[1]);
+  /* atėjus iš buto puslapio ar pagrindinio – nuslenkame iki aukšto pasirinkimo */
+  const go=()=>$("aukstai").scrollIntoView({block:"start"}); go(); addEventListener("load",go,{once:true}); }
 
 /* plano didinimas: atidaro pasirinkto aukšto planą per visą ekraną */
 const dlg=$("planDlg");

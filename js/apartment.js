@@ -1,5 +1,8 @@
-/* Centro Vila – buto puslapis: plano didinimas */
+/* Centro Vila – buto puslapis: plano didinimas (kiekvienam planui) */
 const dlg=$("planDlg");
-$("btZoom").addEventListener("click",()=>{ $("planDlgImg").alt=$("btPlan").alt; dlg.showModal(); });
+document.querySelectorAll(".apt-plan").forEach(fig=>{
+  const img=fig.querySelector("img");
+  fig.querySelector(".bt-zoom").addEventListener("click",()=>{ $("planDlgImg").src=img.src; $("planDlgImg").alt=img.alt; dlg.showModal(); });
+});
 $("planDlgX").addEventListener("click",()=>dlg.close());
 dlg.addEventListener("click",e=>{ if(e.target===dlg) dlg.close(); });
