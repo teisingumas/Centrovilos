@@ -27,16 +27,6 @@ function onScroll(){
   hdr.classList.toggle("cta-on", !heroSec || scrollY > heroSec.offsetTop + heroSec.offsetHeight - hdr.offsetHeight);
 }
 addEventListener("scroll",onScroll,{passive:true}); addEventListener("resize",onScroll); onScroll();
-/* mobilaus meniu telefonai ir CTA (rodomi tik „Popieriaus“ meniu apačioje) */
-(function(){
-  const nav=$("nav"), cta=hdr.querySelector(".hdr-end .cta"); if(!nav) return;
-  const li=document.createElement("li"); li.className="nav-meta";
-  const arrow='<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>';
-  li.innerHTML=
-    '<div class="ppl"><div><b>Juras Sadauskas</b><a href="tel:+37060101066">+370 601 01066</a></div><div><b>Darius Uleckas</b><a href="tel:+37069938883">+370 699 38883</a></div></div>'+
-    '<a class="cta" href="'+(cta?cta.getAttribute("href"):"#")+'">Rinkis butą '+arrow+'</a>';
-  nav.appendChild(li);
-})();
 function setMenu(o){
   const b=$("burger").getBoundingClientRect(), nav=$("nav");
   if(nav){ nav.style.setProperty("--ox",(b.left+b.width/2)+"px"); nav.style.setProperty("--oy",(b.top+b.height/2)+"px"); }

@@ -1,26 +1,25 @@
-# Centro Vila – svetainė
+# Centro Vila – svetainė su turinio valdymu
 
-Statinė svetainė (HTML + CSS + JS), jokio surinkimo nereikia – failus galima tiesiog įkelti į serverį.
-
-```
-index.html            pagrindinis puslapis
-kontaktai/index.html  kontaktų puslapis (/kontaktai)
-galerija/index.html   galerija (img/galerija/: -m.webp sąraše, didelės – peržiūroje)
-1-butas..6-butas/       buto puslapiai + užklausos langas (js/inquiry.js) (planai img/butai/)
-1-aukstas/index.html  butai (/1-aukstas/, /2-aukstas/, /3-aukstas/ – .htaccess nukreipia į tą patį failą): aukšto pasirinkimas, planai (img/planai/), butų duomenys js/floors.js
-apie-projekta/index.html  apie projektą (/apie-projekta)
-css/style.css         visi stiliai (spalvos ir šriftai – :root kintamieji viršuje)
-js/site.js            bendra antraštė / meniu
-js/home.js            pagrindinio puslapio logika (aukštai, žemėlapis, įkėlimo animacija)
-js/contact.js         kontaktų formos tikrinimas
-img/                  nuotraukos
-```
-
-Peržiūra lokaliai: `python3 -m http.server` ir atidaryti http://localhost:8000
-
-Kontaktų forma kol kas niekur nesiunčiama – patikrina laukus ir parodo padėką.
-Siuntimą prijungti `js/contact.js` (žymė `TODO`).
-
+PHP svetainė be duomenų bazės: turinys laikomas JSON failuose, puslapiai generuojami iš šablonų.
 Talpinama Hostinger (laikinai https://juda.vedejasedvardas.lt/), įkeliama per Git iš šios repozitorijos.
-Vidinės nuorodos – švarūs absoliutūs adresai (/, /apie-projekta/, /1-aukstas/, /3-butas/ ...); jiems reikia serverio su .htaccess (Apache / LiteSpeed).
-Senos nuorodos (butas-01/, .../index.html) .htaccess nukreipiamos 301.
+
+```
+index.php, apie-projekta/, galerija/, kontaktai/   puslapių šablonai
+1-aukstas/index.php   butų puslapis (/1-aukstas/, /2-aukstas/, /3-aukstas/ – .htaccess)
+1-butas … 6-butas/    butų puslapiai (bendras šablonas cms/butas.php)
+cms/                  branduolys (core, layout, auth), pradinis turinys seed.json,
+                      kontūrai konturai/*.html, logotipai partials/ – iš naršyklės neprieinama
+prisijungimas/        turinio valdymas (/prisijungimas): prisijungimas, redaktoriai, API
+css/, js/, img/       stiliai, skriptai, nuotraukos
+_data/  (ne git)      live.json (paskelbta), draft.json (juodraštis), users.json, istorija/, žurnalas
+uploads/ (ne git)     per valdymą įkeltos nuotraukos (WebP)
+```
+
+- Turinys: pirmą kartą `_data/live.json` sukuriamas iš `cms/seed.json`. Toliau keičiama tik per /prisijungimas.
+- Pirmas administratorius – `cms/bootstrap.php` (naudojamas tik kai paskyrų dar nėra; prisijungus laikinu slaptažodžiu reikia susikurti savo).
+- Juodraštis → „Peržiūrėti“ (mato tik administratorius) → „Paskelbti“. Prieš kiekvieną paskelbimą išsaugoma versija (`_data/istorija`).
+- Kontūrai (aukštai hero nuotraukoje, butai aukštų planuose, patalpos butų planuose) – `cms/konturai/`, keičiami kontūrų redaktoriumi.
+- Perkeliant į kliento domeną: nukopijuoti visus failus **kartu su `_data/` ir `uploads/`**, domeną įrašyti į `CV_HOSTS` (`cms/auth.php`).
+- Lokaliai: `php -S 127.0.0.1:8812 cms/router.php` (2-3 aukštų adresams reikia .htaccess ar maršrutizatoriaus).
+
+Kontaktų ir užklausos formos kol kas niekur nesiunčiamos (laukiama gavėjo el. pašto).

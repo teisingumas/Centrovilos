@@ -1,0 +1,868 @@
+{
+ "site": {
+  "contacts": {
+   "email": "info@centrovila.lt",
+   "address": "Trakų g. 16, Kaunas",
+   "mapsUrl": "https://maps.app.goo.gl/gEmYdVADFxmiJUcH7",
+   "facebook": "https://www.facebook.com/centrovilakaune",
+   "people": [
+    {
+     "name": "Juras Sadauskas",
+     "phone": "+370 601 01066"
+    },
+    {
+     "name": "Darius Uleckas",
+     "phone": "+370 699 38883"
+    }
+   ]
+  },
+  "footer": {
+   "eyebrow": "Kontaktai",
+   "title": "Pamatykite *gyvai*",
+   "copy": "© 2026 Centro Vila · Kaunas"
+  }
+ },
+ "home": {
+  "hero": {
+   "eyebrow": "Trakų g. 16, Kaunas",
+   "title": "Šeši butai *pačioje* Kauno širdyje",
+   "text": "Nedidelis prabangus daugiabutis šalia Laisvės alėjos pradžios. Kiekvienas butas pritaikomas pagal individualius poreikius.",
+   "button": "Apie projektą",
+   "pickLabel": "Pasirinkite aukštą",
+   "panelText": "Išplanavimą ir apdailą pritaikysime pagal jūsų poreikius."
+  },
+  "about": {
+   "eyebrow": "Apie projektą",
+   "title": "Prabanga, matuojama *detalėmis*, ne dydžiu.",
+   "lead": "Prestižinėje Kauno vietoje, šalia Laisvės alėjos pradžios statomas „boutique“ tipo nedidelis prabangus daugiabutis. Šiame name – vos 6 butai, tad privatumas ir ramybė yra garantuoti.",
+   "text": "Kiekvieną butą galima pritaikyti sau – jungti erdves ar keisti išplanavimą, o pirmame aukšte įrengti net biurą. Vidiniame kieme netrūks vietos automobiliams, o stilingai įrengtos laiptinės pasitiks jau nuo pirmo žingsnio.",
+   "image": {
+    "src": "/img/dron.webp",
+    "alt": "Centro Vila iš paukščio skrydžio, apsupta žalumos Kauno centre",
+    "w": 768,
+    "h": 683
+   },
+   "facts": [
+    {
+     "value": "6",
+     "small": "",
+     "label": "Butai"
+    },
+    {
+     "value": "3",
+     "small": "",
+     "label": "Aukštai"
+    },
+    {
+     "value": "5",
+     "small": "min",
+     "label": "Iki Laisvės al."
+    }
+   ]
+  },
+  "location": {
+   "eyebrow": "Unikali vieta",
+   "title": "Pačiame *Kauno* centre",
+   "text": "Vieta, kurioje susilieja istorinis paveldas ir šiuolaikinis miesto ritmas. Ąžuolynas ir Nemuno sala kviečia ramiam laisvalaikiui gamtoje, o Laisvės alėja tėra keli žingsniai. Aplink netrūksta jaukių kavinių, restoranų ir kultūrinio gyvenimo, o visi svarbiausi miesto objektai lengvai pasiekiami. Netoliese įsikūrusi Žalgirio arena ir prekybos centras „Akropolis“ pasirūpins pramogomis bei kasdieniais poreikiais. Tai reta galimybė gyventi pačioje miesto širdyje, neprarandant ramybės ir privatumo.",
+   "note": "Laikas – pėsčiomis nuo Trakų g. 16",
+   "places": [
+    {
+     "name": "Laisvės alėja",
+     "min": "5",
+     "walk": true,
+     "x": 560,
+     "y": 410
+    },
+    {
+     "name": "PC „Akropolis”",
+     "min": "6",
+     "walk": false,
+     "x": 612,
+     "y": 604
+    },
+    {
+     "name": "Ąžuolynas",
+     "min": "8",
+     "walk": false,
+     "x": 956,
+     "y": 200
+    },
+    {
+     "name": "Kauno senamiestis",
+     "min": "10",
+     "walk": false,
+     "x": 120,
+     "y": 444
+    },
+    {
+     "name": "Nemuno sala",
+     "min": "12",
+     "walk": false,
+     "x": 500,
+     "y": 630
+    },
+    {
+     "name": "Žalgirio arena",
+     "min": "14",
+     "walk": false,
+     "x": 410,
+     "y": 628
+    }
+   ]
+  },
+  "gallery": {
+   "eyebrow": "Galerija",
+   "title": "Architektūra, kuri kalba tyliai",
+   "items": [
+    {
+     "src": "/img/fasadas-1.webp",
+     "alt": "Centro Vila fasadas iš gatvės pusės",
+     "caption": "Fasadas · Trakų g. 16",
+     "w": 768,
+     "h": 597
+    },
+    {
+     "src": "/img/fasadas-2.webp",
+     "alt": "Centro Vila kampas tarp rudeninių medžių",
+     "caption": "Fasadas · kampas",
+     "w": 768,
+     "h": 597
+    },
+    {
+     "src": "/img/laiptine-1.webp",
+     "alt": "Laiptinė: juodi laiptai, raudona sienų juosta, plytelių grindys",
+     "caption": "Laiptinė",
+     "w": 225,
+     "h": 300
+    },
+    {
+     "src": "/img/laiptine-2.webp",
+     "alt": "Laiptinės koridorius su šaškių raštu grindimis",
+     "caption": "Laiptinė",
+     "w": 225,
+     "h": 300
+    },
+    {
+     "src": "/img/laiptine-3.webp",
+     "alt": "Laiptinės aikštelė prie buto durų",
+     "caption": "Laiptinė",
+     "w": 225,
+     "h": 300
+    },
+    {
+     "src": "/img/is-virsaus-1.webp",
+     "alt": "Centro Vila iš paukščio skrydžio tarp žalių medžių ir gretimų namų",
+     "caption": "Iš paukščio skrydžio",
+     "w": 1024,
+     "h": 768
+    },
+    {
+     "src": "/img/is-virsaus-2.webp",
+     "alt": "Centro Vila iš viršaus, fone – Kauno mečetė ir parkas",
+     "caption": "Iš paukščio skrydžio",
+     "w": 1024,
+     "h": 768
+    }
+   ]
+  }
+ },
+ "about": {
+  "hero": {
+   "eyebrow": "Apie projektą",
+   "title": "Sukurta iki paskutinės *detalės*",
+   "text": "Nuo A klasės energetikos iki medinių langų – kiekviena detalė čia pasirinkta neatsitiktinai. Svarbu ne tik kaip atrodo, bet ir kaip tarnaus dešimtmečius, kad kasdienybė būtų patogi ir rami."
+  },
+  "factsLabel": "Bendra informacija",
+  "facts": [
+   {
+    "value": "2027",
+    "small": "III ketv.",
+    "label": "Statyba iki 85+ % baigtumo",
+    "word": false
+   },
+   {
+    "value": "6",
+    "small": "",
+    "label": "Vos 6 butai pastate",
+    "word": false
+   },
+   {
+    "value": "3",
+    "small": "+ mansarda",
+    "label": "Trijų aukštų namas",
+    "word": false
+   },
+   {
+    "value": "Parkavimas",
+    "small": "",
+    "label": "Privačios vietos vidiniame kieme",
+    "word": true
+   },
+   {
+    "value": "Liftas",
+    "small": "",
+    "label": "Pastate",
+    "word": true
+   },
+   {
+    "value": "Sandėliukai",
+    "small": "",
+    "label": "Namo rūsyje",
+    "word": true
+   }
+  ],
+  "tabs": [
+   {
+    "title": "Techninė informacija",
+    "intro": "Konstrukcija ir inžinerija, sukurta ilgaamžiškumui ir energiniam efektyvumui.",
+    "items": [
+     {
+      "title": "Energetinė klasė",
+      "text": "ne žemesnė nei A"
+     },
+     {
+      "title": "Šildymas",
+      "text": "centrinis miesto, individualiai reguliuojamas, šildomos grindys"
+     },
+     {
+      "title": "Fasadas",
+      "text": "struktūrinis tinkas"
+     },
+     {
+      "title": "Langai",
+      "text": "mediniai, kaustyti aliuminiu, trijų stiklų paketas"
+     },
+     {
+      "title": "Nešančios sienos",
+      "text": "silikatinių plytų mūras, apšiltintas PIR poliuretanu"
+     },
+     {
+      "title": "Stogas",
+      "text": "šlaitinis, skardos danga, akmens vatos šiltinimas"
+     },
+     {
+      "title": "Lubų aukštis",
+      "text": "~3 m"
+     }
+    ]
+   },
+   {
+    "title": "Bendros erdvės ir laukas",
+    "intro": "Išpuoselėta aplinka ir saugumas, prasidedantys jau už durų.",
+    "items": [
+     {
+      "title": "",
+      "text": "Pilnai įrengta laiptinė su judesio davikliais valdomu apšvietimu"
+     },
+     {
+      "title": "",
+      "text": "Sutvarkyta aplinka: takeliai, fasado apšvietimas, augmenija"
+     },
+     {
+      "title": "",
+      "text": "Kiemo vartai, valdomi telefonu"
+     },
+     {
+      "title": "",
+      "text": "Vaizdo stebėjimo kameros"
+     }
+    ]
+   },
+   {
+    "title": "Dalinė apdaila",
+    "intro": "Parengta jūsų vizijai: pagrindas, ant kurio kursite savo interjerą.",
+    "items": [
+     {
+      "title": "",
+      "text": "Išvedžioti vandens ir nuotekų įvadai į taškus bute"
+     },
+     {
+      "title": "",
+      "text": "Išvedžiota elektros instaliacija bute"
+     },
+     {
+      "title": "",
+      "text": "Lubos: 1–3 a. betonas; mansardos – gipso apdaila"
+     },
+     {
+      "title": "",
+      "text": "Domofono ir priešgaisrinės signalizacijos instaliacija"
+     },
+     {
+      "title": "",
+      "text": "Tarpbutinės pertvaros – silikato blokeliai su akmens vata"
+     },
+     {
+      "title": "",
+      "text": "Vidinės pertvaros – gipso kartonas / mūras, tinkuota"
+     },
+     {
+      "title": "",
+      "text": "Grindys – betonuotos, įrengtas grindinis šildymas"
+     },
+     {
+      "title": "",
+      "text": "Šarvo tipo lauko durys, medžio faneruotės apdaila"
+     },
+     {
+      "title": "",
+      "text": "Paruošta rekuperacijai (sistemą įsirengia pirkėjas)"
+     },
+     {
+      "title": "",
+      "text": "Atvestos šaldymo trasos iki buto"
+     },
+     {
+      "title": "",
+      "text": "Buto įvadas 9 kW; el. automobiliui – 11 kW kanalas"
+     },
+     {
+      "title": "",
+      "text": "VELUX elektriniai stoglangiai mansardoje"
+     }
+    ]
+   }
+  ]
+ },
+ "gallery": {
+  "hero": {
+   "eyebrow": "Galerija",
+   "title": "Vieta iš *paukščio* skrydžio",
+   "text": "Sklypas Trakų g. 16 ir jo apylinkės – Ramybės parkas, Vytauto parkas ir visas Kauno centras ranka pasiekiamas."
+  },
+  "items": [
+   {
+    "src": "/img/galerija/dronas-01.webp",
+    "thumb": "/img/galerija/dronas-01-m.webp",
+    "alt": "Ąžuolyno parkas ir Kauno centras iš paukščio skrydžio",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-02.webp",
+    "thumb": "/img/galerija/dronas-02-m.webp",
+    "alt": "Trakų gatvės kvartalas ir Ąžuolynas iš viršaus",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-03.webp",
+    "thumb": "/img/galerija/dronas-03-m.webp",
+    "alt": "Kauno centras: sklypas Trakų g. 16 tarp žalumos",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-04.webp",
+    "thumb": "/img/galerija/dronas-04-m.webp",
+    "alt": "Kauno centro panorama su Nemunu horizonte",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-05.webp",
+    "thumb": "/img/galerija/dronas-05-m.webp",
+    "alt": "Sklypo apylinkės ir parkas iš paukščio skrydžio",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-06.webp",
+    "thumb": "/img/galerija/dronas-06-m.webp",
+    "alt": "Kaunas iš viršaus: Žalgirio arenos pusė ir parkas",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-07.webp",
+    "thumb": "/img/galerija/dronas-07-m.webp",
+    "alt": "Sklypas Trakų g. 16 iš viršaus",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-08.webp",
+    "thumb": "/img/galerija/dronas-08-m.webp",
+    "alt": "Kauno centro gatvės ir sklypas iš paukščio skrydžio",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-09.webp",
+    "thumb": "/img/galerija/dronas-09-m.webp",
+    "alt": "Sklypas su Ąžuolyno kalnu fone",
+    "w": 1100,
+    "h": 825
+   },
+   {
+    "src": "/img/galerija/dronas-10.webp",
+    "thumb": "/img/galerija/dronas-10-m.webp",
+    "alt": "Statybų aikštelė ir kaimyninių namų kiemai",
+    "w": 1100,
+    "h": 825
+   }
+  ]
+ },
+ "contacts": {
+  "hero": {
+   "eyebrow": "Kontaktai",
+   "title": "Pamatykite *gyvai*",
+   "text": "Mielai aprodysime namą, papasakosime apie butų išplanavimus ir apdailos galimybes. Paskambinkite arba parašykite – susisieksime per vieną darbo dieną."
+  },
+  "formTitle": "Parašykite *mums*",
+  "note": "Jūsų duomenis naudosime tik atsakyti į šią užklausą.",
+  "doneTitle": "Jūsų žinutė gauta.",
+  "doneText": "Susisieksime su jumis artimiausiu metu.",
+  "formEmail": ""
+ },
+ "floorsPage": {
+  "hero": {
+   "eyebrow": "Butai",
+   "title": "Šeši butai, viena *ypatinga* vieta",
+   "text": "Kiekviename aukšte, tik po du butus, tad privatumo netrūks. Nuo jaukių mažesnių – 70 m² erdvių iki prašmatnių 131 m² butų per du aukštus."
+  },
+  "stats": [
+   {
+    "value": "3",
+    "small": "",
+    "label": "Aukštai"
+   },
+   {
+    "value": "2",
+    "small": "",
+    "label": "Butai aukšte"
+   },
+   {
+    "value": "A",
+    "small": "klasė",
+    "label": "Energinė klasė"
+   }
+  ],
+  "pickLabel": "Pasirinkite aukštą"
+ },
+ "floors": [
+  {
+   "no": 1,
+   "name": "1 aukštas",
+   "hero": "1 aukštas",
+   "note": ""
+  },
+  {
+   "no": 2,
+   "name": "2 aukštas",
+   "hero": "2 aukštas",
+   "note": ""
+  },
+  {
+   "no": 3,
+   "name": "3 aukštas + mansarda",
+   "hero": "3 aukštas",
+   "note": "su mansarda"
+  }
+ ],
+ "apartments": [
+  {
+   "no": "01",
+   "floor": 1,
+   "floorText": "1 aukštas",
+   "status": "Rezervuotas",
+   "area": "72,03 m²",
+   "orient": "R / V / Š",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "1–3",
+   "subtitle": "",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-01.webp",
+     "caption": "",
+     "label": "Patalpos",
+     "total": "",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Kambarys",
+       "area": "67,26 m²"
+      },
+      {
+       "n": "2",
+       "name": "San. mazgas",
+       "area": "4,77 m²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "no": "02",
+   "floor": 1,
+   "floorText": "1 aukštas",
+   "status": "Rezervuotas",
+   "area": "70,41 m²",
+   "orient": "R / P / V",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "1–3",
+   "subtitle": "",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-02.webp",
+     "caption": "",
+     "label": "Patalpos",
+     "total": "",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Kambarys",
+       "area": "65,64 m²"
+      },
+      {
+       "n": "2",
+       "name": "San. mazgas",
+       "area": "4,77 m²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "no": "03",
+   "floor": 2,
+   "floorText": "2 aukštas",
+   "status": "Laisvas",
+   "area": "70,90 m²",
+   "orient": "R / V / Š",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "3",
+   "subtitle": "",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-03.webp",
+     "caption": "",
+     "label": "Patalpos",
+     "total": "",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Kambarys",
+       "area": "35,93 m²"
+      },
+      {
+       "n": "2",
+       "name": "Kambarys",
+       "area": "16,84 m²"
+      },
+      {
+       "n": "3",
+       "name": "Kambarys",
+       "area": "10,72 m²"
+      },
+      {
+       "n": "4",
+       "name": "San. mazgas",
+       "area": "3,37 m²"
+      },
+      {
+       "n": "5",
+       "name": "Pagalbinė patalpa",
+       "area": "4,04 m²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "no": "04",
+   "floor": 2,
+   "floorText": "2 aukštas",
+   "status": "Laisvas",
+   "area": "74,82 m²",
+   "orient": "R / P / V",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "3",
+   "subtitle": "",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-04.webp",
+     "caption": "",
+     "label": "Patalpos",
+     "total": "",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Holas",
+       "area": "4,64 m²"
+      },
+      {
+       "n": "2",
+       "name": "Kambarys",
+       "area": "27,77 m²"
+      },
+      {
+       "n": "3",
+       "name": "Pagalbinė patalpa",
+       "area": "1,99 m²"
+      },
+      {
+       "n": "4",
+       "name": "Kambarys",
+       "area": "16,73 m²"
+      },
+      {
+       "n": "5",
+       "name": "Kambarys",
+       "area": "16,92 m²"
+      },
+      {
+       "n": "6",
+       "name": "San. mazgas",
+       "area": "6,77 m²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "no": "05",
+   "floor": 3,
+   "floorText": "3 aukštas + mansarda",
+   "status": "Laisvas",
+   "area": "126,36 m²",
+   "orient": "R / Š / V",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "5",
+   "subtitle": "Dviejų aukštų butas",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-05-1.webp",
+     "caption": "1 aukštas",
+     "label": "1 aukštas",
+     "total": "66,81 m²",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Kambarys",
+       "area": "38,07 m²"
+      },
+      {
+       "n": "2",
+       "name": "Pagalbinė patalpa",
+       "area": "4,04 m²"
+      },
+      {
+       "n": "3",
+       "name": "San. mazgas",
+       "area": "3,36 m²"
+      },
+      {
+       "n": "4",
+       "name": "Kambarys",
+       "area": "10,72 m²"
+      },
+      {
+       "n": "5",
+       "name": "Kambarys",
+       "area": "10,62 m²"
+      }
+     ]
+    },
+    {
+     "img": "/img/butai/butas-05-2.webp",
+     "caption": "2 aukštas (mansarda)",
+     "label": "2 aukštas (mansarda)",
+     "total": "59,55 m²",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Koridorius",
+       "area": "11,20 m²"
+      },
+      {
+       "n": "2",
+       "name": "Kambarys",
+       "area": "12,01 m²"
+      },
+      {
+       "n": "3",
+       "name": "Drabužinė",
+       "area": "5,56 m²"
+      },
+      {
+       "n": "4",
+       "name": "San. mazgas",
+       "area": "3,96 m²"
+      },
+      {
+       "n": "5",
+       "name": "Kambarys",
+       "area": "22,30 m²"
+      },
+      {
+       "n": "6",
+       "name": "San. mazgas",
+       "area": "4,52 m²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "no": "06",
+   "floor": 3,
+   "floorText": "3 aukštas + mansarda",
+   "status": "Laisvas",
+   "area": "131,65 m²",
+   "orient": "R / P / V",
+   "finish": "Dalinė",
+   "price": "",
+   "rooms": "5",
+   "subtitle": "Dviejų aukštų butas",
+   "features": [
+    {
+     "text": "Parkavimo vietos kieme",
+     "icon": "parking"
+    },
+    {
+     "text": "Erdvūs sandėliukai",
+     "icon": "storage"
+    }
+   ],
+   "plans": [
+    {
+     "img": "/img/butai/butas-06-1.webp",
+     "caption": "1 aukštas",
+     "label": "1 aukštas",
+     "total": "70,99 m²",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Holas",
+       "area": "4,51 m²"
+      },
+      {
+       "n": "2",
+       "name": "Pagalbinė patalpa",
+       "area": "2,11 m²"
+      },
+      {
+       "n": "3",
+       "name": "Kambarys",
+       "area": "33,60 m²"
+      },
+      {
+       "n": "4",
+       "name": "San. mazgas",
+       "area": "4,14 m²"
+      },
+      {
+       "n": "5",
+       "name": "Kambarys",
+       "area": "9,81 m²"
+      },
+      {
+       "n": "6",
+       "name": "Kambarys",
+       "area": "16,82 m²"
+      }
+     ]
+    },
+    {
+     "img": "/img/butai/butas-06-2.webp",
+     "caption": "2 aukštas (mansarda)",
+     "label": "2 aukštas (mansarda)",
+     "total": "60,66 m²",
+     "rooms": [
+      {
+       "n": "1",
+       "name": "Koridorius",
+       "area": "5,06 m²"
+      },
+      {
+       "n": "2",
+       "name": "Kambarys",
+       "area": "17,40 m²"
+      },
+      {
+       "n": "3",
+       "name": "Drabužinė",
+       "area": "5,73 m²"
+      },
+      {
+       "n": "4",
+       "name": "San. mazgas",
+       "area": "5,04 m²"
+      },
+      {
+       "n": "5",
+       "name": "Kambarys",
+       "area": "15,81 m²"
+      },
+      {
+       "n": "6",
+       "name": "San. mazgas",
+       "area": "6,30 m²"
+      },
+      {
+       "n": "7",
+       "name": "Drabužinė",
+       "area": "5,32 m²"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -4,10 +4,10 @@ const lb=$("lb"); let lbI=0;
 function lbShow(i){
   lbI=(i+glItems.length)%glItems.length;
   const img=glItems[lbI].querySelector("img");
-  $("lbImg").src=img.src.replace("-m.webp",".webp"); $("lbImg").alt=img.alt;
+  $("lbImg").src=glItems[lbI].dataset.full||img.src; $("lbImg").alt=img.alt;
   $("lbCap").textContent=img.alt; $("lbCount").textContent=(lbI+1)+" / "+glItems.length;
   /* kitą nuotrauką užkrauname iš anksto */
-  const n=glItems[(lbI+1)%glItems.length].querySelector("img"); new Image().src=n.src.replace("-m.webp",".webp");
+  new Image().src=glItems[(lbI+1)%glItems.length].dataset.full||"";
 }
 glItems.forEach((b,i)=>b.addEventListener("click",()=>{ lbShow(i); lb.showModal(); }));
 $("lbX").onclick=()=>lb.close();

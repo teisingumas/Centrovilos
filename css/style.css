@@ -167,7 +167,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .apt b{font-weight:500}
 .apt b small{display:block;font-weight:400;font-size:13px;color:var(--ink-2);letter-spacing:.04em}
 .apt .bt-badge{font-size:10px;padding:5px 9px;color:var(--corten)}
-.apt .bt-badge--free{color:#fff}
+.apt .bt-badge--free,.apt .bt-badge--sold{color:#fff}
 .apt span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
 .panel p{margin:0 0 20px;font-size:15px;color:var(--ink-2)}
 .panel .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;background:none;color:var(--ink);cursor:pointer;font-size:22px;line-height:1}
@@ -476,6 +476,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-apt h2{font-size:34px;line-height:1}
 .bt-badge{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--corten);border:1px solid var(--bronze-hi);padding:6px 10px;white-space:nowrap}
 .bt-badge--free{color:#fff;background:var(--accent);border-color:var(--accent)}
+.bt-badge--sold{color:#fff;background:var(--night);border-color:var(--night)}
 .bt-apt dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;border-top:1px solid var(--line);padding-top:18px}
 .bt-apt dt{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2)}
 .bt-apt dd{margin:2px 0 0;font-size:17px}

@@ -1,16 +1,24 @@
-# Centro Vila – švarūs adresai
+# Centro Vila – švarūs adresai ir apsauga
 Options -Indexes
-DirectoryIndex index.html
+DirectoryIndex index.php index.html
 RewriteEngine On
 
-# .git ir kiti paslėpti failai neprieinami
+# paslėpti failai (.git ir kt.), TVS kodas ir duomenys neprieinami iš naršyklės
 RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule ^(cms|_data)(/|$) - [F,L]
+RewriteRule ^README\.md$ - [F,L]
 
 # senos nuorodos -> naujos (301)
 RewriteRule ^butas-0([1-6])/?(index\.html)?$ /$1-butas/ [R=301,L]
-RewriteRule ^(apie-projekta|galerija|kontaktai|1-aukstas|[1-6]-butas)/index\.html$ /$1/ [R=301,L]
-RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^(apie-projekta|galerija|kontaktai|1-aukstas|[1-6]-butas)/index\.(html|php)$ /$1/ [R=301,L]
+RewriteRule ^index\.(html|php)$ / [R=301,L]
 
-# 2 ir 3 aukštas – tas pats butų puslapis, aukštą parenka js/floors.js pagal adresą
+# 2 ir 3 aukštas – tas pats butų puslapis, aukštą parenka 1-aukstas/index.php pagal adresą
 RewriteRule ^([23])-aukstas$ /$1-aukstas/ [R=301,L]
-RewriteRule ^[23]-aukstas/$ 1-aukstas/index.html [L]
+RewriteRule ^[23]-aukstas/$ 1-aukstas/index.php [L]
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>

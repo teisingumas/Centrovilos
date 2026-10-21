@@ -1,27 +1,16 @@
 /* Centro Vila – pagrindinio puslapio skriptas */
-const FLOORS = {
-  "aukstas-3": { title:"3 aukštas", note:"su mansarda", apts:[{ no:"05", area:"126,36 m²", status:"Laisvas" },{ no:"06", area:"131,65 m²", status:"Laisvas" }] },
-  "aukstas-2": { title:"2 aukštas", apts:[{ no:"03", area:"70,90 m²", status:"Laisvas" },{ no:"04", area:"74,82 m²", status:"Laisvas" }] },
-  "aukstas-1": { title:"1 aukštas", apts:[{ no:"01", area:"72,03 m²", status:"Rezervuotas" },{ no:"02", area:"70,41 m²", status:"Rezervuotas" }] }
-};
-/* x,y – taškas žemėlapyje (1000×760) */
-const PLACES = [
-  { name:"Laisvės alėja",     min:5,  walk:true, x:560, y:410 },
-  { name:"PC „Akropolis”",    min:6,  x:612, y:604 },
-  { name:"Ąžuolynas",         min:8,  x:956, y:200 },
-  { name:"Kauno senamiestis", min:10, x:120, y:444 },
-  { name:"Nemuno sala",       min:12, x:500, y:630 },
-  { name:"Žalgirio arena",    min:14, x:410, y:628 }
-];
+/* duomenys iš TVS (index.php): aukštai su butais ir žemėlapio taškai (x,y – taškas žemėlapyje 1000×760) */
+const FLOORS = window.CV.floors;
+const PLACES = window.CV.places;
 const NS="http://www.w3.org/2000/svg";
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* ---------- loader ---------- */
 (function(){
   const paths=[...document.querySelectorAll("#loader .lp")];
-  const heroSrc = innerWidth<900 ? "img/hero-1280.webp" : "img/hero.webp";
+  const heroSrc = innerWidth<900 ? "/img/hero-1280.webp" : "/img/hero.webp";
   document.querySelectorAll("#heroPic .hp").forEach(i=>i.setAttribute("href",heroSrc));
-  const jobs=[heroSrc,"img/dron.webp"].map(src=>new Promise(r=>{const i=new Image(); i.onload=i.onerror=r; i.src=src;}));
+  const jobs=[heroSrc,(document.querySelector("#apie img")||{}).src].filter(Boolean).map(src=>new Promise(r=>{const i=new Image(); i.onload=i.onerror=r; i.src=src;}));
   try{ jobs.push(document.fonts.ready); }catch(e){}
   let loaded=0; const total=jobs.length; jobs.forEach(p=>p.then(()=>loaded++));
   const MIN = reduce? 300 : 2100, t0=performance.now(); let shown=0, finished=false;
