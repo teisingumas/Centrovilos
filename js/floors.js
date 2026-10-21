@@ -48,11 +48,11 @@ function curFloor(){
   const p=location.pathname.match(/\/([1-3])-aukstas\/?$/), h=location.hash.match(/^#aukstas-([1-3])$/);
   return h?h[1]:p?p[1]:"1";
 }
-function toTabs(smooth){ $("aukstai").scrollIntoView({block:"start",behavior:smooth?"smooth":"auto"}); }
+function toTabs(smooth){ $("aukstai").scrollIntoView({block:"start",behavior:smooth?"smooth":"instant"}); }
 const startFloor=curFloor();
 showFloor(startFloor);
 /* /2-aukstas/, /3-aukstas/ arba #aukstai – iškart nuslenkame iki aukšto pasirinkimo */
-if(startFloor!=="1"||location.hash){ toTabs(); addEventListener("load",()=>toTabs(),{once:true}); }
+if(startFloor!=="1"||location.hash){ toTabs(); addEventListener("DOMContentLoaded",()=>toTabs(),{once:true}); addEventListener("load",()=>{ toTabs(); setTimeout(toTabs,150); },{once:true}); }
 addEventListener("popstate",()=>showFloor(curFloor()));
 
 /* plano didinimas: atidaro pasirinkto aukšto planą per visą ekraną */
