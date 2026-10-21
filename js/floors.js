@@ -10,7 +10,7 @@ function showFloor(n,focus){
   $("btPanel").setAttribute("aria-labelledby","fl"+n);
   $("btPlan").src="/img/planai/aukstas-"+n+".webp"; $("btPlan").alt=f.name+" – butų planas";
   $("btApts").innerHTML=f.apts.map(a=>`<article class="bt-apt" data-no="${a.no}">
-    <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>
+    <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":a.status==="Parduotas"?" bt-badge--sold":""}">${a.status}</span>`:""}</div>
     <dl><div><dt>Plotas</dt><dd>${a.area}</dd></div><div><dt>Aukštas</dt><dd>${a.floor}</dd></div><div><dt>Kambariai</dt><dd>${a.rooms}</dd></div><div><dt>Orientacija</dt><dd>${a.orient}</dd></div></dl>
     <a class="cta ghost" href="${a.href}">Plačiau ${ARROW}</a></article>`).join("");
   drawShapes(n);
