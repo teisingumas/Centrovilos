@@ -3,7 +3,7 @@
    Duomenys laikomi /_data (neįtraukta į git, uždaryta nuo naršyklės). */
 declare(strict_types=1);
 
-const CV_V = '20261021n';             /* CSS/JS versija (naršyklės podėlio atnaujinimui) */
+const CV_V = '20261021o';             /* CSS/JS versija (naršyklės podėlio atnaujinimui) */
 define('CV_ROOT', dirname(__DIR__));
 define('CV_DATA', CV_ROOT . '/_data');
 define('CV_UPLOADS', CV_ROOT . '/uploads');
