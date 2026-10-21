@@ -18,11 +18,31 @@ function showFloor(n,focus){
   flBtns.forEach(b=>{ const on=b.dataset.floor==n; b.setAttribute("aria-selected",on); b.tabIndex=on?0:-1; if(on&&focus) b.focus(); });
   $("btPanel").setAttribute("aria-labelledby","fl"+n);
   $("btPlan").src="../img/planai/aukstas-"+n+".webp"; $("btPlan").alt=f.name+" – butų planas";
-  $("btApts").innerHTML=f.apts.map(a=>`<article class="bt-apt">
+  $("btApts").innerHTML=f.apts.map(a=>`<article class="bt-apt" data-no="${a.no}">
     <div class="bt-apt-hd"><h2>Butas ${a.no}</h2>${a.status?`<span class="bt-badge${a.status==="Laisvas"?" bt-badge--free":""}">${a.status}</span>`:""}</div>
     <dl><div><dt>Plotas</dt><dd>${a.area}</dd></div><div><dt>Aukštas</dt><dd>${a.floor}</dd></div><div><dt>Kambariai</dt><dd>${a.rooms}</dd></div><div><dt>Orientacija</dt><dd>${a.orient}</dd></div></dl>
     <a class="cta ghost" href="../butas-${a.no}/index.html">Plačiau ${ARROW}</a></article>`).join("");
+  drawShapes(n);
 }
+/* ---------- butų kontūrai plane (iš <template id="btK1..3">, kodas iš kontūrų redaktoriaus) ---------- */
+const NS="http://www.w3.org/2000/svg";
+function hotApt(no,on){
+  document.querySelectorAll(`[data-no="${no}"]`).forEach(el=>el.classList.toggle("hot",on));
+}
+function drawShapes(n){
+  const svg=$("btShapes"), tpl=$("btK"+n); svg.textContent=""; if(!tpl) return;
+  tpl.content.querySelectorAll("a.bldg").forEach(src=>{
+    const no=(src.getAttribute("href")||"").replace("#butas-","");
+    const a=document.createElementNS(NS,"a"); a.setAttribute("href","../butas-"+no+"/index.html"); a.dataset.no=no;
+    a.setAttribute("aria-label",src.getAttribute("aria-label")||("Butas "+no));
+    src.querySelectorAll("path").forEach(p=>{ const q=document.createElementNS(NS,"path"); q.setAttribute("d",p.getAttribute("d")); a.appendChild(q); });
+    a.addEventListener("pointerenter",()=>hotApt(no,true)); a.addEventListener("pointerleave",()=>hotApt(no,false));
+    a.addEventListener("focus",()=>hotApt(no,true)); a.addEventListener("blur",()=>hotApt(no,false));
+    svg.appendChild(a);
+  });
+}
+$("btApts").addEventListener("pointerover",e=>{ const c=e.target.closest(".bt-apt"); if(c) hotApt(c.dataset.no,true); });
+$("btApts").addEventListener("pointerout",e=>{ const c=e.target.closest(".bt-apt"); if(c && !c.contains(e.relatedTarget)) hotApt(c.dataset.no,false); });
 flBtns.forEach((b,i)=>{
   b.addEventListener("click",()=>{ showFloor(b.dataset.floor); history.replaceState(null,"","#aukstas-"+b.dataset.floor); });
   b.addEventListener("keydown",e=>{
@@ -35,6 +55,7 @@ const m=location.hash.match(/^#aukstas-([1-3])$/);
 if(m){ showFloor(m[1]);
   /* atėjus iš buto puslapio ar pagrindinio – nuslenkame iki aukšto pasirinkimo */
   const go=()=>$("aukstai").scrollIntoView({block:"start"}); go(); addEventListener("load",go,{once:true}); }
+else showFloor(1);
 
 /* plano didinimas: atidaro pasirinkto aukšto planą per visą ekraną */
 const dlg=$("planDlg");

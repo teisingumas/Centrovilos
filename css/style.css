@@ -441,6 +441,15 @@ section{padding-block:clamp(80px,12vw,160px)}
 .bt-plan{margin:0;background:#fff;padding:clamp(16px,2vw,28px);display:flex;align-items:center}
 .bt-plan{position:relative}
 .bt-plan img{width:100%;height:auto}
+/* butų kontūrai plane: užvedus pele paryškėja butas ir jo kortelė */
+.bt-planwrap{position:relative;width:100%}
+.bt-shapes{position:absolute;inset:0;width:100%;height:100%;display:block}
+.bt-shapes a{cursor:pointer;outline:none}
+.bt-shapes path{fill:rgba(207,128,69,0);stroke:rgba(207,128,69,0);stroke-width:2.5;vector-effect:non-scaling-stroke;transition:fill .3s, stroke .3s}
+.bt-shapes a:hover path,.bt-shapes a:focus-visible path,.bt-shapes a.hot path{fill:rgba(207,128,69,.26);stroke:var(--accent)}
+.bt-apt{transition:box-shadow .3s}
+.bt-apt.hot{box-shadow:inset 0 0 0 2px var(--accent)}
+.bt-apt.hot h2{color:var(--accent)}
 .bt-zoom{position:absolute;right:clamp(12px,1.6vw,20px);bottom:clamp(12px,1.6vw,20px);padding:12px 18px;font-size:12px}
 .bt-dlg{width:100vw;height:100vh;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#fff}
 .bt-dlg::backdrop{background:rgba(20,18,16,.85)}
