@@ -6,8 +6,8 @@ Statinė svetainė (HTML + CSS + JS), jokio surinkimo nereikia – failus galima
 index.html            pagrindinis puslapis
 kontaktai/index.html  kontaktų puslapis (/kontaktai)
 galerija/index.html   galerija (img/galerija/: -m.webp sąraše, didelės – peržiūroje)
-butas-01..06/          buto puslapiai + užklausos langas (js/inquiry.js) (planai img/butai/)
-1-aukstas/index.html  butai: aukšto pasirinkimas, planai (img/planai/), butų duomenys js/floors.js
+1-butas..6-butas/       buto puslapiai + užklausos langas (js/inquiry.js) (planai img/butai/)
+1-aukstas/index.html  butai (/1-aukstas/, /2-aukstas/, /3-aukstas/ – .htaccess nukreipia į tą patį failą): aukšto pasirinkimas, planai (img/planai/), butų duomenys js/floors.js
 apie-projekta/index.html  apie projektą (/apie-projekta)
 css/style.css         visi stiliai (spalvos ir šriftai – :root kintamieji viršuje)
 js/site.js            bendra antraštė / meniu
@@ -21,5 +21,6 @@ Peržiūra lokaliai: `python3 -m http.server` ir atidaryti http://localhost:8000
 Kontaktų forma kol kas niekur nesiunčiama – patikrina laukus ir parodo padėką.
 Siuntimą prijungti `js/contact.js` (žymė `TODO`).
 
-Ta pati svetainė publikuojama ir kaip Claude artifaktas: https://claude.ai/artifact/WMG5YkZ496ozyUHPn3QCoM
-Vidinės nuorodos rašomos su `index.html` (pvz. `kontaktai/index.html`), kad veiktų ir artifakte, ir serveryje.
+Talpinama Hostinger (laikinai https://juda.vedejasedvardas.lt/), įkeliama per Git iš šios repozitorijos.
+Vidinės nuorodos – švarūs absoliutūs adresai (/, /apie-projekta/, /1-aukstas/, /3-butas/ ...); jiems reikia serverio su .htaccess (Apache / LiteSpeed).
+Senos nuorodos (butas-01/, .../index.html) .htaccess nukreipiamos 301.

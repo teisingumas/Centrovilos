@@ -10,7 +10,7 @@ function toTop(){
   try{ scrollTo({top:0,left:0,behavior:"instant"}); }catch(e){ scrollTo(0,0); }
   r.style.scrollBehavior=prev;
 }
-if(!location.hash){
+if(!location.hash && !/\/[23]-aukstas\/?$/.test(location.pathname)){
   toTop();
   addEventListener("DOMContentLoaded",toTop,{once:true});
   /* kai kurios aplinkos (pvz. peržiūros rėmelis) atkuria slinktį jau po užkrovimo – pakartojame */

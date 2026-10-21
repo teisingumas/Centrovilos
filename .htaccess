@@ -1,0 +1,16 @@
+# Centro Vila – švarūs adresai
+Options -Indexes
+DirectoryIndex index.html
+RewriteEngine On
+
+# .git ir kiti paslėpti failai neprieinami
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+# senos nuorodos -> naujos (301)
+RewriteRule ^butas-0([1-6])/?(index\.html)?$ /$1-butas/ [R=301,L]
+RewriteRule ^(apie-projekta|galerija|kontaktai|1-aukstas|[1-6]-butas)/index\.html$ /$1/ [R=301,L]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2 ir 3 aukštas – tas pats butų puslapis, aukštą parenka js/floors.js pagal adresą
+RewriteRule ^([23])-aukstas$ /$1-aukstas/ [R=301,L]
+RewriteRule ^[23]-aukstas/$ 1-aukstas/index.html [L]
