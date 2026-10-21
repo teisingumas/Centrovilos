@@ -34,6 +34,7 @@ h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;l
 #loader::before{left:0;border-right-width:1px}
 #loader::after{right:0;border-left-width:1px}
 #loader.done{visibility:hidden}
+.ld-skip #loader{display:none}
 #loader.done::before{transform:translateX(-100%);border-color:var(--accent)}
 #loader.done::after{transform:translateX(100%);border-color:var(--accent)}
 #loader .box{position:relative;z-index:1;transition:opacity .35s var(--ease), transform .5s var(--ease)}

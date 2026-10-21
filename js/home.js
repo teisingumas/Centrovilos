@@ -37,12 +37,22 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
   function done(){ $("loader").classList.add("done");
     if(!reduce) setTimeout(()=>{ $("heroSvg").classList.add("hint"); },900); }
+  /* grįžus į pagrindinį tame pačiame apsilankyme – be įkėlimo animacijos */
+  if(document.documentElement.classList.contains("ld-skip")){ finished=true; done(); return; }
+  try{ sessionStorage.setItem("cvSeen","1"); }catch(e){}
   requestAnimationFrame(frame);
   setTimeout(()=>{ if(!finished){ finished=true; done(); } }, 8000);
 })();
 
+/* ---------- logotipas ir „Pagrindinis“ pagrindiniame puslapyje: tik grįžta į viršų, nepersikrauna ---------- */
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href="/"]'); if(!a||e.ctrlKey||e.metaKey||e.shiftKey||e.button) return;
+  e.preventDefault(); if(document.documentElement.classList.contains("menu-open")) setMenu(false);
+  scrollTo({top:0,behavior:reduce?"auto":"smooth"});
+});
+
 /* ---------- active menu item ---------- */
-const secMap={pagrindinis:"#pagrindinis",apie:"#apie",vieta:"#apie"};
+const secMap={pagrindinis:"/",apie:"#apie",vieta:"#apie"};
 const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const h=secMap[e.target.id]; document.querySelectorAll(".nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")===h)); } }),{rootMargin:"-45% 0px -50% 0px"});
 Object.keys(secMap).forEach(id=>{ const el=$(id); if(el) io.observe(el); });
 
