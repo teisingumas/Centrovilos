@@ -8,14 +8,20 @@ RewriteRule (^|/)\.(?!well-known/) - [F,L]
 RewriteRule ^(cms|_data)(/|$) - [F,L]
 RewriteRule ^README\.md$ - [F,L]
 
-# senos nuorodos -> naujos (301)
+# senos nuorodos -> naujos (301). Tik tiesioginėms užklausoms – ne vidiniams perrašymams
+# (kitaip /2-aukstas/ -> 1-aukstas/index.php būtų nukreipta atgal į /1-aukstas/)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^butas-0([1-6])/?(index\.html)?$ /$1-butas/ [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{THE_REQUEST} \s/+[^\s?]*index\.(html|php)[\s?]
 RewriteRule ^(apie-projekta|galerija|kontaktai|1-aukstas|[1-6]-butas)/index\.(html|php)$ /$1/ [R=301,L]
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{THE_REQUEST} \s/+index\.(html|php)[\s?]
 RewriteRule ^index\.(html|php)$ / [R=301,L]
 
 # 2 ir 3 aukštas – tas pats butų puslapis, aukštą parenka 1-aukstas/index.php pagal adresą
 RewriteRule ^([23])-aukstas$ /$1-aukstas/ [R=301,L]
-RewriteRule ^[23]-aukstas/$ 1-aukstas/index.php [L]
+RewriteRule ^[23]-aukstas/$ 1-aukstas/index.php [END]
 
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
