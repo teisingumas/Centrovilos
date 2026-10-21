@@ -234,7 +234,7 @@ section{padding-block:clamp(80px,12vw,160px)}
 .about .photo{max-width:664px;padding:0 24px 24px 0}
 .about .photo::before{left:24px;top:24px;right:0;bottom:0;width:auto;height:auto;background:none;border:1.5px solid var(--accent)}
 .about .photo img{max-width:640px}
-.about .facts div:first-child b{color:var(--accent)}
+
 @media (max-width:860px){ .about .wrap{grid-template-columns:1fr} }
 @media (max-width:420px){ .facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} }
 
