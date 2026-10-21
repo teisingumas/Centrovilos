@@ -31,7 +31,7 @@ $HIST = CV_DATA . '/istorija';
 function pub_user(array $u, array $me): array
 {
     return ['id' => $u['id'], 'name' => $u['name'], 'email' => $u['email'], 'twofa' => !empty($u['totp']['enabled']),
-        'mustChange' => !empty($u['mustChange']), 'disabled' => !empty($u['disabled']), 'me' => $u['id'] === $me['id'],
+        'mustChange' => !empty($u['mustChange']), 'owner' => cv_is_owner($u), 'disabled' => !empty($u['disabled']), 'me' => $u['id'] === $me['id'],
         'backupLeft' => count($u['backup'] ?? [])];
 }
 function history_list(string $dir): array
@@ -260,6 +260,15 @@ try {
             cv_log($me['name'], 'Išjungė dviejų žingsnių patvirtinimą');
             out(['ok' => true, 'me' => pub_user(cv_find_user('id', $me['id']), $me)]);
 
+        case 'user-add':
+        case 'user-reset':
+        case 'user-toggle':
+        case 'user-delete':
+            if (!cv_is_owner($me)) fail('Paskyras kurti ir keisti gali tik pagrindinis administratorius.', 403);
+            if ($a !== 'user-add' && cv_is_owner(cv_find_user('id', (string)($in['id'] ?? '')))) fail('Pagrindinio administratoriaus paskyros keisti negalima.', 403);
+            break;
+    }
+    switch ($a) {
         case 'user-add':
             $name = clean_str($in['name'] ?? '', 60); $email = strtolower(clean_str($in['email'] ?? '', 120));
             if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) fail('Įveskite vardą ir teisingą el. paštą.');

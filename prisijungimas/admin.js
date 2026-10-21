@@ -241,7 +241,7 @@ function render() {
   drawSide();
   const m = $("#main"); m.innerHTML = "";
   const v = VIEWS[route] || (route.startsWith("butas-") ? () => viewApt(route.slice(6)) : VIEWS.apzvalga);
-  m.append(...[].concat(v()));
+  m.append(...[].concat(v()).filter(Boolean));
   setState();
   scrollTo(0, 0);
 }
@@ -542,7 +542,8 @@ VIEWS.paskyros = () => {
       u.twofa ? h("span", { class: "tag ok" }, "2FA įjungta") : h("span", { class: "tag" }, "Be 2FA"),
       u.mustChange ? h("span", { class: "tag" }, "Laukia prisijungimo") : null,
       u.disabled ? h("span", { class: "tag bad" }, "Išjungta") : null,
-      u.me ? null : h("span", { style: { display: "flex", gap: "6px", flexWrap: "wrap" } },
+      u.owner ? h("span", { class: "tag ok" }, "Pagrindinis administratorius") : null,
+      u.me || u.owner || !S.me.owner ? null : h("span", { style: { display: "flex", gap: "6px", flexWrap: "wrap" } },
         h("button", { class: "btn ghost small", type: "button", onclick: async () => {
           const ck = h("input", { type: "checkbox" });
           const ok = await dialog("Naujas laikinas slaptažodis", h("div", {}, h("p", {}, `${u.name} bus atjungtas ir turės prisijungti su nauju laikinu slaptažodžiu.`),
@@ -559,9 +560,9 @@ VIEWS.paskyros = () => {
   draw();
   const nu = { name: "", email: "" };
   return [
-    head("Paskyros", "Administratoriai su vienodomis teisėmis."),
+    head("Paskyros", S.me.owner ? "Visi administratoriai gali keisti visą turinį. Paskyras kuriate ir valdote tik jūs." : "Visi administratoriai gali keisti visą turinį. Paskyras kuria ir valdo pagrindinis administratorius."),
     card("Administratoriai", box),
-    card("Nauja paskyra", h("p", { class: "hint" }, "Sistema sukurs laikiną slaptažodį – perduokite jį žmogui. Prisijungęs jis susikurs savo."),
+    !S.me.owner ? null : card("Nauja paskyra", h("p", { class: "hint" }, "Sistema sukurs laikiną slaptažodį – perduokite jį žmogui. Prisijungęs jis susikurs savo."),
       grid(2, fld("Vardas", nu, "name"), fld("El. paštas", nu, "email", { type: "email" })),
       h("button", { class: "btn mt", type: "button", onclick: async () => {
         try { const r = await api("user-add", nu); S.users = r.users; draw(); showTemp(nu.name, r.temp); } catch (e) { toast(e.message, true); }

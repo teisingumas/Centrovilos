@@ -26,6 +26,10 @@ function cv_bootstrap_users(): void
     ]]);
 }
 
+/* pagrindinis administratorius: tik jis kuria, išjungia ir trina paskyras */
+const CV_OWNER_EMAIL = 'deividas15@gmail.com';
+function cv_is_owner(?array $u): bool { return $u !== null && strtolower((string)$u['email']) === CV_OWNER_EMAIL; }
+
 function cv_find_user(string $field, string $val): ?array
 {
     foreach (cv_users() as $u) if (strtolower((string)($u[$field] ?? '')) === strtolower($val)) return $u;
