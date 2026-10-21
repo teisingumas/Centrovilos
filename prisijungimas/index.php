@@ -169,7 +169,7 @@ function auth_page(string $title, string $body): void
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title><?= e($title) ?> – Centro Vila TVS</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="admin.css?v=<?= CV_V ?>">
 </head>
 <body class="auth">
@@ -233,7 +233,7 @@ if (!$user) {
 <meta name="robots" content="noindex,nofollow">
 <meta name="csrf" content="<?= e($csrf) ?>">
 <title>Centro Vila – turinio valdymas</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="admin.css?v=<?= CV_V ?>">
 </head>
 <body class="app">

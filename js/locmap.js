@@ -45,11 +45,11 @@ function locMap(svg,places,opt={}){
   MAJOR.forEach(m=>{const lp=(opt.lp||{})[m.n]??m.lp,k=Math.min(m.p.length-2,Math.floor(lp*(m.p.length-1))),a=m.p[k],b=m.p[k+1];let r=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;if(r>90||r<-90)r+=180;const x=(a[0]+b[0])/2,y=(a[1]+b[1])/2;
     s+=`<text x="${x}" y="${y-9}" transform="rotate(${r} ${x} ${y})" text-anchor="middle" font-family="Red Hat Display,sans-serif" font-size="12.5" letter-spacing="1.6" fill="${C.label}">${m.n.toUpperCase()}</text>`});
   AREAS.forEach(a=>{const col=a.water?C.waterLabel:a.t==="Ąžuolynas"||a.t==="Ramybės parkas"?C.waterLabel:C.area;
-    s+=`<text x="${a.x}" y="${a.y}" ${a.rot?`transform="rotate(${a.rot} ${a.x} ${a.y})"`:""} text-anchor="middle" font-family="${a.water?"Bodoni Moda,serif":"Red Hat Display,sans-serif"}" font-style="${a.water?"italic":"normal"}" font-size="${a.water?18:13}" letter-spacing="${a.water?0:2.2}" fill="${col}">${a.water?a.t:a.t.toUpperCase()}</text>`});
+    s+=`<text x="${a.x}" y="${a.y}" ${a.rot?`transform="rotate(${a.rot} ${a.x} ${a.y})"`:""} text-anchor="middle" font-family="${a.water?"Cormorant Garamond,serif":"Red Hat Display,sans-serif"}" font-style="${a.water?"italic":"normal"}" font-size="${a.water?18:13}" letter-spacing="${a.water?0:2.2}" fill="${col}">${a.water?a.t:a.t.toUpperCase()}</text>`});
   places.forEach((p,i)=>s+=`<path class="lm-route" data-i="${i}" d="${route(p)}"/>`);
   places.forEach((p,i)=>s+=`<g class="lm-pin" data-i="${i}"><g class="s"><circle cx="${p.x}" cy="${p.y}" r="13" fill="${C.accent}"/><text x="${p.x}" y="${p.y+4.2}" text-anchor="middle" font-family="Red Hat Display,sans-serif" font-weight="700" font-size="12" fill="${C.bg}">${i+1}</text></g></g>`);
   s+=`<circle cx="${HX}" cy="${HY}" r="22" fill="none" stroke="${C.accent}" stroke-width="1"/><circle cx="${HX}" cy="${HY}" r="9" fill="${C.accent}"/>
-    <text x="${HX+26}" y="${HY-2}" font-family="Bodoni Moda,serif" font-size="22" fill="${C.house}" paint-order="stroke" stroke="${C.bg}" stroke-width="5">Centro Vila</text>
+    <text x="${HX+26}" y="${HY-2}" font-family="Cormorant Garamond,serif" font-size="22" fill="${C.house}" paint-order="stroke" stroke="${C.bg}" stroke-width="5">Centro Vila</text>
     <text x="${HX+27}" y="${HY+16}" font-family="Red Hat Display,sans-serif" font-size="10.5" letter-spacing="2.2" fill="${C.accent}" paint-order="stroke" stroke="${C.bg}" stroke-width="4">TRAKŲ G. 16</text>`;
   svg.innerHTML=s;
 }

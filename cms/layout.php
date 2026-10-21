@@ -41,7 +41,7 @@ function cv_head(array $C, string $title, string $desc, string $page, bool $curr
 <meta name="description" content="<?= e($desc) ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
 <link rel="stylesheet" href="/css/style.css?v=<?= CV_V ?>">
 <?php if ($home): ?><script>/* įkėlimo animacija rodoma tik pirmą kartą per apsilankymą */try{if(sessionStorage.getItem("cvSeen"))document.documentElement.classList.add("ld-skip")}catch(e){}</script>
 <?php endif ?>

@@ -2,7 +2,7 @@
 :root{
   --bg:#F3F0EB; --paper:#FFFFFF; --ink:#161311; --ink-2:#5E5650; --ink-3:#8E857D; --line:#E2DCD4; --line-2:#CFC6BB;
   --accent:#CF8045; --accent-ink:#9C5A2B; --accent-bg:#FBF1E8; --ok:#3F7A4E; --ok-bg:#EAF3EC; --bad:#B4432F; --bad-bg:#FBECE8;
-  --serif:"Bodoni Moda",Georgia,serif; --sans:"Red Hat Display",system-ui,sans-serif;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Red Hat Display",system-ui,sans-serif;
   --top:64px; --side:248px; --r:2px;
 }
 *{box-sizing:border-box}
