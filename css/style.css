@@ -225,6 +225,11 @@ section{padding-block:clamp(80px,12vw,160px)}
 .facts b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(40px,4vw,56px);line-height:1;color:var(--ink);white-space:nowrap}
 .facts b small{font-family:var(--body);font-size:16px;letter-spacing:.08em;margin-left:6px;color:var(--bronze)}
 .facts span{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+/* „Apie projektą“: visi akcentai – headerio CTA spalva (--accent) */
+.about .eyebrow{color:var(--accent)}
+.about h2 em{color:var(--accent)}
+.about .facts b small{color:var(--accent)}
+.about .photo::before{background:radial-gradient(120% 80% at 30% 20%, rgba(255,255,255,.14), transparent 60%), linear-gradient(160deg, #D98E57 0%, #CF8045 55%, #BC7039 100%)}
 @media (max-width:860px){ .about .wrap{grid-template-columns:1fr} }
 @media (max-width:420px){ .facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} }
 
