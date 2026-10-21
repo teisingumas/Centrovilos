@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Red+Hat+Display:wght@300;400;500;600&display=swap">
-<link rel="stylesheet" href="../css/style.css?v=20261021d">
+<link rel="stylesheet" href="../css/style.css?v=20261021e">
 </head>
 <body class="inner">
 <header class="hdr solid" id="hdr">
@@ -142,8 +142,23 @@
   </div>
 </footer>
 
-<script src="../js/site.js?v=20261021d"></script>
-<script src="../js/apartment.js?v=20261021d"></script>
-<script src="../js/inquiry.js?v=20261021d"></script>
+<!--
+  PATALPŲ KONTŪRAI BUTO PLANE. Koreguokite „Kontūrų redaktoriuje“ (nuotrauka „Butas NN – planas“),
+  nukopijuokite „Kodas svetainei“ ir įklijuokite vietoj atitinkamo <svg>…</svg> žemiau.
+  Nuoroda = #patalpa-N (N – numeris sąraše).
+-->
+<template id="rmK0">
+<svg viewBox="0 0 1024 1024" preserveAspectRatio="none">
+  <a class="bldg" href="#patalpa-1" aria-label="Patalpa 1">
+    <path d="M303,110 L303,446 L402,448 L401,467 L303,467 L303,905 L524,905 L525,812 L688,812 L688,688 L566,687 L566,448 L720,447 L720,110 Z"/>
+  </a>
+  <a class="bldg" href="#patalpa-2" aria-label="Patalpa 2">
+    <path d="M576,495 L575,679 L688,680 L688,496 Z"/>
+  </a>
+</svg>
+</template>
+<script src="../js/site.js?v=20261021e"></script>
+<script src="../js/apartment.js?v=20261021e"></script>
+<script src="../js/inquiry.js?v=20261021e"></script>
 </body>
 </html>
