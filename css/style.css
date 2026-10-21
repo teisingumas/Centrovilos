@@ -71,27 +71,32 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .burger span{display:block;height:1px;background:currentColor;margin:6px 0}
 @media (max-width:1020px){
   .hdr .wrap{grid-template-columns:auto 1fr}
-  /* pilno ekrano meniu „Popierius“: šviesus lapas įslysta iš dešinės, punktai dideliu Bodoni, apačioje telefonai ir bronzinis CTA */
+  /* pilno ekrano meniu „Naktis“: tamsus fonas su vos matomu fasadu, punktai iškyla vienas po kito, apačioje telefonai ir bronzinis CTA */
   .hdr .brand,.hdr .hdr-end{position:relative;z-index:2}
-  .nav{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;align-items:stretch;gap:2px;overflow-y:auto;overscroll-behavior:contain;background:var(--paper);color:var(--ink);
-    padding:calc(var(--hdr) + env(safe-area-inset-top,0px) + 20px) max(24px, env(safe-area-inset-right,0px)) max(24px, env(safe-area-inset-bottom,0px)) max(24px, env(safe-area-inset-left,0px));
-    transform:translateX(100%);visibility:hidden;pointer-events:none;transition:transform .6s var(--ease),visibility 0s .6s}
-  .nav::before{content:"Trakų g. 16, Kaunas";flex:none;font-family:var(--body);font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--bronze);margin-bottom:22px}
-  .nav li{width:100%}
-  .nav a{display:block;padding:2px 0;font-family:var(--display);font-size:clamp(38px,11.5vw,54px);line-height:1.14;letter-spacing:-.01em;text-transform:none;font-weight:400;color:var(--ink)}
+  .nav{position:fixed;inset:0;z-index:1;display:flex;flex-direction:column;align-items:stretch;gap:0;overflow-y:auto;overscroll-behavior:contain;background:#100D0B;color:var(--on-night);
+    padding:calc(var(--hdr) + env(safe-area-inset-top,0px) + 16px) max(24px, env(safe-area-inset-right,0px)) max(24px, env(safe-area-inset-bottom,0px)) max(24px, env(safe-area-inset-left,0px));
+    opacity:0;visibility:hidden;pointer-events:none;transition:opacity .45s var(--ease),visibility 0s .45s}
+  .nav::before{content:"";position:fixed;left:0;right:0;bottom:0;height:55%;background:url(../img/fasadas-2.webp) center/cover;opacity:.16;pointer-events:none;
+    -webkit-mask-image:linear-gradient(0deg,#000 20%,transparent);mask-image:linear-gradient(0deg,#000 20%,transparent)}
+  .nav li{position:relative;width:100%;border-bottom:1px solid rgba(241,236,229,.12);overflow:hidden}
+  .nav a{display:block;padding:14px 0;font-family:var(--display);font-size:clamp(34px,9.4vw,46px);line-height:1.05;letter-spacing:0;text-transform:none;font-weight:400;color:var(--on-night);transform:translateY(110%);transition:transform .7s var(--ease)}
   .nav a::after{display:none}
-  .nav a.on,.nav a:hover{font-style:italic;color:var(--bronze)}
-  .hdr .nav a.on::after{content:"";display:inline-block;position:static;width:32px;height:1px;background:var(--bronze);vertical-align:middle;margin-left:14px;transform:none}
-  .hdr.open .nav{transform:none;visibility:visible;pointer-events:auto;transition:transform .6s var(--ease),visibility 0s}
-  .nav .nav-meta{margin-top:auto;padding-top:22px;border-top:1px solid var(--line);width:100%;display:grid;gap:18px}
+  .hdr .nav a.on,.nav a:hover{font-style:italic;color:var(--accent)}
+  .hdr .nav a.on::after{display:none}
+  .hdr.open .nav{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .45s var(--ease),visibility 0s}
+  .hdr.open .nav a{transform:none}
+  .hdr.open .nav li:nth-child(2) a{transition-delay:.06s} .hdr.open .nav li:nth-child(3) a{transition-delay:.12s}
+  .hdr.open .nav li:nth-child(4) a{transition-delay:.18s} .hdr.open .nav li:nth-child(5) a{transition-delay:.24s}
+  .nav .nav-meta{position:relative;margin-top:auto;padding-top:28px;border-bottom:0;width:100%;display:grid;gap:18px;overflow:visible;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease) .3s, transform .6s var(--ease) .3s}
+  .hdr.open .nav .nav-meta{opacity:1;transform:none}
   .nav .nav-meta .ppl{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .nav .nav-meta b{display:block;font-family:var(--body);font-weight:600;font-size:14px;color:var(--ink)}
-  .nav .nav-meta .ppl a{display:inline;padding:0;font-family:var(--body);font-size:15px;line-height:1.5;letter-spacing:0;color:var(--ink-2);font-style:normal;font-variant-numeric:tabular-nums;text-decoration:none}
-  .nav .nav-meta .ppl a:hover{color:var(--bronze)}
-  .nav .nav-meta a.cta{display:flex;justify-content:space-between;align-items:center;background:var(--bronze);color:#fff;font-family:var(--body);font-style:normal;font-size:13px;line-height:1.2;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:16px 20px;opacity:1;visibility:visible;transform:none}
-  .nav .nav-meta a.cta:hover{background:var(--ink);color:#fff}
+  .nav .nav-meta b{display:block;font-family:var(--body);font-weight:600;font-size:14px;color:var(--on-night)}
+  .nav .nav-meta .ppl a{display:inline;padding:0;font-family:var(--body);font-size:15px;line-height:1.5;color:var(--on-night-2);font-style:normal;font-variant-numeric:tabular-nums;text-decoration:none;transform:none}
+  .nav .nav-meta .ppl a:hover{color:var(--accent)}
+  .nav .nav-meta a.cta{display:flex;justify-content:space-between;align-items:center;background:var(--accent);color:#fff;font-family:var(--body);font-style:normal;font-size:13px;line-height:1.2;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:16px 20px;opacity:1;visibility:visible;transform:none}
+  .nav .nav-meta a.cta:hover{background:#fff;color:var(--ink)}
   .nav .nav-meta a.cta svg{display:block}
-  .hdr.hdr.open{background:var(--paper);box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--ink)}
+  .hdr.hdr.open{background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--on-night)}
   .hdr.hdr.open .hdr-end > .cta{opacity:0;visibility:hidden}
   .hdr.solid .wrap{height:var(--hdr)}
   .burger{display:block}
