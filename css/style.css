@@ -229,7 +229,12 @@ section{padding-block:clamp(80px,12vw,160px)}
 .about .eyebrow{color:var(--accent)}
 .about h2 em{color:var(--accent)}
 .about .facts b small{color:var(--accent)}
-.about .photo::before{background:radial-gradient(120% 80% at 30% 20%, rgba(255,255,255,.14), transparent 60%), linear-gradient(160deg, #D98E57 0%, #CF8045 55%, #BC7039 100%)}
+/* „Originalas“: nuotrauka su pasislinkusiu plonu vario rėmu */
+.about .wrap{grid-template-columns:minmax(0,640px) minmax(0,1fr)}
+.about .photo{max-width:664px;padding:0 24px 24px 0}
+.about .photo::before{left:24px;top:24px;right:0;bottom:0;width:auto;height:auto;background:none;border:1.5px solid var(--accent)}
+.about .photo img{max-width:640px}
+.about .facts div:first-child b{color:var(--accent)}
 @media (max-width:860px){ .about .wrap{grid-template-columns:1fr} }
 @media (max-width:420px){ .facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px} }
 
